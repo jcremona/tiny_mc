@@ -31,6 +31,7 @@ static float heat2[SHELLS];
 static void photon(void)
 {
     const float albedo = MU_S / (MU_S + MU_A);
+    printf("%f\n", albedo);
     const float shells_per_mfp = 1e4 / MICRONS_PER_SHELL / (MU_A + MU_S);
 
     /* launch */
@@ -125,6 +126,9 @@ int main(int argc, char* argv[])
 
     printf("# Radius\tHeat\n");
     printf("# [microns]\t[W/cm^3]\tError\n");
+    // 1e12 -> cubic micron to cubic cm
+    // Volume of spherical shell (times PHOTONS): (t * (i * i + i + 1.0 / 3.0))
+    // It is equivalent to https://en.wikipedia.org/wiki/Spherical_shell
     float t = 4.0f * M_PI * powf(MICRONS_PER_SHELL, 3.0f) * PHOTONS / 1e12;
     for (unsigned int i = 0; i < SHELLS - 1; ++i) {
         fprintf(heat_fp, "%6.0f\t%12.5f\t%12.5f\n", i * (float)MICRONS_PER_SHELL,
