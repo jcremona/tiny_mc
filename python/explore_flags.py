@@ -1,4 +1,4 @@
-import runtinymc as tmc
+import compilationlibrary as complib
 import argparse
 from sklearn.model_selection import ParameterGrid
 import os
@@ -11,19 +11,18 @@ import matplotlib.pyplot as plt
 
 def explore(output_folder_path, cwd=None, iterations=10):
     # Explore different flags and plot the results
-    p = {'compiler': [tmc.GCC, tmc.CLANG], 'optim': [tmc.O0, tmc.O1, tmc.O2, tmc.O3]}
+    p = {'compiler': complib.COMPILERS, 'optim': complib.OPTIMIZATION_FLAGS}
     grid = list(ParameterGrid(p))
     log_info = []
     for i, flags in enumerate(grid):
         compiler = flags['compiler']
-        optim_flags = [flags['optim'], tmc.MARCH_NATIVE]
         # Compile
-        tmc.compile(compiler, optim_flags, cwd=cwd, clean_required=True)
+        complib.compile_native(compiler, [flags['optim']], cwd=cwd, clean_required=True)
         photons_file_path = os.path.join(output_folder_path, "photons_{}.txt".format(i))
         for j in range(iterations):
             heat_file_path = os.path.join(output_folder_path, "heat_{}_{}.txt".format(i, j))
             # Execute
-            tmc.execute(heat_file_path, photons_file_path, cwd=cwd)
+            complib.execute(heat_file_path, photons_file_path, cwd=cwd)
         log_info.append({'compiler': compiler, 'optim': flags['optim'], 'photons_output': photons_file_path})
     save_log_info(log_info, os.path.join(output_folder_path, 'results.csv'))
     print_results(log_info)
