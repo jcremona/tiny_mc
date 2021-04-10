@@ -31,7 +31,6 @@ static float heat2[SHELLS];
 static void photon(void)
 {
     const float albedo = MU_S / (MU_S + MU_A);
-    printf("%f\n", albedo);
     const float shells_per_mfp = 1e4 / MICRONS_PER_SHELL / (MU_A + MU_S);
 
     /* launch */
