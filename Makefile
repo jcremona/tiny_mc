@@ -1,23 +1,24 @@
 # Compilers
-CC = gcc
+CXX = g++
 
 # Flags
 EXTRA_CFLAGS=
-CFLAGS = -std=gnu11 -Wall -Wextra $(EXTRA_CFLAGS)
-LDFLAGS = -lm
+CXXFLAGS = -Wall -Wextra $(EXTRA_CFLAGS)
+#CXXFLAGS = $(CFLAGS)
+LDFLAGS = -lm -lstdc++
 
 # Binary file
 TARGET = tiny_mc
 
 # Files
-C_SOURCES = tiny_mc.c
-C_OBJS = $(patsubst %.c, %.o, $(C_SOURCES))
+CXX_SOURCES = tiny_mc.cpp
+CXX_OBJS = $(patsubst %.cpp, %.o, $(CXX_SOURCES))
 
 # Rules
 all: $(TARGET)
 
-$(TARGET): $(C_OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+$(TARGET): $(CXX_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	rm -f $(TARGET) *.o

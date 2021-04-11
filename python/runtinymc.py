@@ -1,6 +1,6 @@
 import subprocess as sp
 
-GCC = "gcc"
+GCC = "g++"
 CLANG = "clang"
 
 O0 = "-O0"
@@ -11,7 +11,7 @@ MARCH_NATIVE = "-march=native"
 
 
 def build_compiler_param(compiler):
-    return "CC=" + compiler
+    return "CXX=" + compiler
 
 
 def build_flag_list(flags):

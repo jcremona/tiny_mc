@@ -13,6 +13,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <boost/random/mersenne_twister.hpp>
+#include <boost/random/variate_generator.hpp>
+#include <boost/random/uniform_real.hpp>
+
 char t1[] = "Tiny Monte Carlo by Scott Prahl (http://omlc.ogi.edu)";
 char t2[] = "1 W Point Source Heating in Infinite Isotropic Scattering Medium";
 char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
@@ -23,6 +27,11 @@ char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
 static float heat[SHELLS];
 static float heat2[SHELLS];
 
+typedef boost::mt19937 Algorithm;
+typedef struct boost::variate_generator< Algorithm, boost::uniform_real<> > RNG;
+Algorithm rng(SEED);
+boost::uniform_real<> uni_dist(0,1);
+RNG random_float(rng, uni_dist);
 
 /***
  * Photon
@@ -43,7 +52,7 @@ static void photon(void)
     float weight = 1.0f;
 
     for (;;) {
-        float t = -logf(rand() / (float)RAND_MAX); /* move */
+        float t = -logf(random_float()); /* move */
         x += t * u;
         y += t * v;
         z += t * w;
@@ -59,8 +68,8 @@ static void photon(void)
         /* New direction, rejection method */
         float xi1, xi2;
         do {
-            xi1 = 2.0f * rand() / (float)RAND_MAX - 1.0f;
-            xi2 = 2.0f * rand() / (float)RAND_MAX - 1.0f;
+            xi1 = 2.0f * random_float() - 1.0f;
+            xi2 = 2.0f * random_float() - 1.0f;
             t = xi1 * xi1 + xi2 * xi2;
         } while (1.0f < t);
         u = 2.0f * t - 1.0f;
@@ -68,7 +77,7 @@ static void photon(void)
         w = xi2 * sqrtf((1.0f - u * u) / t);
 
         if (weight < 0.001f) { /* roulette */
-            if (rand() / (float)RAND_MAX > 0.1f)
+            if (random_float() > 0.1f)
                 break;
             weight /= 0.1f;
         }
@@ -82,8 +91,8 @@ static void photon(void)
 
 int main(int argc, char* argv[])
 {
-    char* heat_filepath;
-    char* photons_per_sec_filepath;
+    const char* heat_filepath;
+    const char* photons_per_sec_filepath;
     if (argc == 3) {
         heat_filepath = argv[1];
         photons_per_sec_filepath = argv[2];
@@ -102,8 +111,6 @@ int main(int argc, char* argv[])
     printf("# Absorption = %8.3f/cm\n", MU_A);
     printf("# Photons    = %8d\n#\n", PHOTONS);
 
-    // configure RNG
-    srand(SEED);
     // start timer
     double start = wtime();
     // simulation
@@ -122,6 +129,7 @@ int main(int argc, char* argv[])
     printf("# %lf seconds\n", elapsed);
     printf("# %lf K photons per second\n", 1e-3 * PHOTONS / elapsed);
     fprintf(photons_fp, "%lf\n", PHOTONS / elapsed);
+    fclose(photons_fp);
 
     printf("# Radius\tHeat\n");
     printf("# [microns]\t[W/cm^3]\tError\n");
@@ -135,6 +143,7 @@ int main(int argc, char* argv[])
                 sqrt(heat2[i] - heat[i] * heat[i] / PHOTONS) / t / (i * i + i + 1.0f / 3.0f));
     }
     printf("# extra\t%12.5f\n", heat[SHELLS - 1] / PHOTONS);
+    fclose(heat_fp);
 
     return 0;
 }
