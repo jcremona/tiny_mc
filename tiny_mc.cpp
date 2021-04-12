@@ -25,9 +25,13 @@ char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
             " and Nicolas Wolovick";
 
 
-// global state, heat and heat square in each shell
-static float heat[SHELLS];
-static float heat2[SHELLS];
+// global state
+struct heat_struct {
+    float heat; // heat
+    float heat2; // heat square
+};
+
+static heat_struct heat_array[SHELLS];
 
 //typedef boost::taus88 Algorithm;
 //typedef boost::mt19937 Algorithm;
@@ -66,8 +70,9 @@ static void photon(void)
         if (shell > SHELLS - 1) {
             shell = SHELLS - 1;
         }
-        heat[shell] += (1.0f - albedo) * weight;
-        heat2[shell] += (1.0f - albedo) * (1.0f - albedo) * weight * weight; /* add up squares */
+
+        heat_array[shell].heat += (1.0f - albedo) * weight;
+        heat_array[shell].heat2 += (1.0f - albedo) * (1.0f - albedo) * weight * weight; /* add up squares */
         weight *= albedo;
 
         /* New direction, rejection method */
@@ -144,10 +149,10 @@ int main(int argc, char* argv[])
     float t = 4.0f * M_PI * powf(MICRONS_PER_SHELL, 3.0f) * PHOTONS / 1e12;
     for (unsigned int i = 0; i < SHELLS - 1; ++i) {
         fprintf(heat_fp, "%6.0f\t%12.5f\t%12.5f\n", i * (float)MICRONS_PER_SHELL,
-                heat[i] / t / (i * i + i + 1.0 / 3.0),
-                sqrt(heat2[i] - heat[i] * heat[i] / PHOTONS) / t / (i * i + i + 1.0f / 3.0f));
+                heat_array[i].heat / t / (i * i + i + 1.0 / 3.0),
+                sqrt(heat_array[i].heat2 - heat_array[i].heat * heat_array[i].heat / PHOTONS) / t / (i * i + i + 1.0f / 3.0f));
     }
-    printf("# extra\t%12.5f\n", heat[SHELLS - 1] / PHOTONS);
+    printf("# extra\t%12.5f\n", heat_array[SHELLS - 1].heat / PHOTONS);
     fclose(heat_fp);
 
     return 0;
