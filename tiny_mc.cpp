@@ -13,7 +13,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <boost/random/mersenne_twister.hpp>
+#include <boost/random/linear_congruential.hpp> // rand48
+//#include <boost/random/mersenne_twister.hpp>  // mt
+//#include <boost/random/taus88.hpp> // taus88
 #include <boost/random/variate_generator.hpp>
 #include <boost/random/uniform_real.hpp>
 
@@ -27,7 +29,10 @@ char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
 static float heat[SHELLS];
 static float heat2[SHELLS];
 
-typedef boost::mt19937 Algorithm;
+//typedef boost::taus88 Algorithm;
+//typedef boost::mt19937 Algorithm;
+
+typedef boost::rand48 Algorithm;
 typedef struct boost::variate_generator< Algorithm, boost::uniform_real<> > RNG;
 Algorithm rng(SEED);
 boost::uniform_real<> uni_dist(0,1);
