@@ -75,7 +75,14 @@ static void photon(void)
         heat_array[shell].heat2 += (1.0f - albedo) * (1.0f - albedo) * weight * weight; /* add up squares */
         weight *= albedo;
 
-        /* New direction, rejection method */
+        /* Rejection method */
+        if (weight < 0.001f) { /* roulette */
+            if (random_float() > 0.1f)
+                break;
+            weight /= 0.1f;
+        }
+
+        /* New direction */
         float xi1, xi2;
         do {
             xi1 = 2.0f * random_float() - 1.0f;
@@ -86,11 +93,6 @@ static void photon(void)
         v = xi1 * sqrtf((1.0f - u * u) / t);
         w = xi2 * sqrtf((1.0f - u * u) / t);
 
-        if (weight < 0.001f) { /* roulette */
-            if (random_float() > 0.1f)
-                break;
-            weight /= 0.1f;
-        }
     }
 }
 
