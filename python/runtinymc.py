@@ -8,6 +8,15 @@ O1 = "-O1"
 O2 = "-O2"
 O3 = "-O3"
 MARCH_NATIVE = "-march=native"
+FFAST_MATH = "-ffast-math"
+GDEBUG = "-g"
+FLTO = "-flto"
+FPROFILE_GENERATE = "-fprofile-generate"  # FDO
+FPROFILE_USE = "-fprofile-use"
+
+
+def get_fprofile_use(file):
+    return FPROFILE_USE + "=" + file
 
 
 def build_compiler_param(compiler):

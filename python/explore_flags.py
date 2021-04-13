@@ -1,4 +1,5 @@
 import compilationlibrary as complib
+import config_flags
 import argparse
 from sklearn.model_selection import ParameterGrid
 import os
@@ -17,7 +18,7 @@ def explore(output_folder_path, cwd=None, iterations=10):
     for i, flags in enumerate(grid):
         compiler = flags['compiler']
         # Compile
-        complib.compile_native(compiler, [flags['optim']], cwd=cwd, clean_required=True)
+        complib.compile_native(compiler, [flags['optim']] + config_flags.EXPLORE_FIXED_FLAGS, cwd=cwd, clean_required=True)
         photons_file_path = os.path.join(output_folder_path, "photons_{}.txt".format(i))
         for j in range(iterations):
             heat_file_path = os.path.join(output_folder_path, "heat_{}_{}.txt".format(i, j))
