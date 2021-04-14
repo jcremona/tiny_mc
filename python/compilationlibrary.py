@@ -13,6 +13,10 @@ def compile_native(compiler, flags, clean_required, cwd=None):
     tmc.compile(compiler, optim_flags, cwd=cwd, clean_required=clean_required)
 
 
+def compile_gcc(flags, clean_required, cwd=None):
+    tmc.compile(get_gcc_compiler(), flags, cwd=cwd, clean_required=clean_required)
+
+
 def execute(heat_file_path=None, photons_file_path=None, cwd=None):
     timestr = time.strftime("%Y%m%d_%H%M%S")
     if heat_file_path is None:

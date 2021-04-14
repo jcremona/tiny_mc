@@ -1,4 +1,5 @@
 import compilationlibrary as complib
+import config_flags
 import argparse
 from sklearn.model_selection import ParameterGrid
 import os
@@ -17,7 +18,7 @@ def explore(output_folder_path, cwd=None, iterations=10):
     for i, flags in enumerate(grid):
         compiler = flags['compiler']
         # Compile
-        complib.compile_native(compiler, [flags['optim']], cwd=cwd, clean_required=True)
+        complib.compile_native(compiler, [flags['optim']] + config_flags.EXPLORE_FIXED_FLAGS, cwd=cwd, clean_required=True)
         photons_file_path = os.path.join(output_folder_path, "photons_{}.txt".format(i))
         for j in range(iterations):
             heat_file_path = os.path.join(output_folder_path, "heat_{}_{}.txt".format(i, j))
@@ -61,7 +62,7 @@ def plot_results(plot_info):
 
     fig.text(0.05, 0.5, "Photons per second", ha="center", va="center", rotation=90)
     fig.suptitle('Average photons per sec by compiler and optimization flags (in addition to march=native).')
-    plt.show()
+    fig.savefig("original.svg", format="svg")#plt.show()
 
 
 def save_log_info(log_info, path):
@@ -85,4 +86,5 @@ if __name__ == "__main__":
     parser.add_argument("output", help="Output directory")
     parser.add_argument("--working_dir", help="Working directory")
     args = parser.parse_args()
-    explore(args.output, cwd=args.working_dir)
+    load_log_info(args.output)
+    #explore(args.output, cwd=args.working_dir)
