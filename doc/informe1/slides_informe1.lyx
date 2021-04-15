@@ -320,6 +320,49 @@ ERT
 \end_layout
 
 \begin_layout Frame
+\noindent
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/roofline.pdf
+	scale 39
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -975,7 +1018,11 @@ Finalmente, usamos FDO con las flags -fgenerate-profile, y -fgenerate-use.
 \end_layout
 
 \begin_layout Frame
-Para 50 corridas, en promedio obtuvimos 323K pps.
+Para 50 corridas, en promedio obtuvimos 
+\series bold
+323K pps
+\series default
+.
 \end_layout
 
 \begin_layout Standard
@@ -998,27 +1045,76 @@ Loops
 
 \end_layout
 
-\begin_layout Frame
+\begin_deeper
+\begin_layout Itemize
 Las iteraciones del for principal del método photons dependen de los valores
  de la iteración anterior, pues la nueva posición del fotón se calcula a
  partir de la posición anterior.
- La bandera -funroll-loops no nos mejora nada.
- El compilador avisa que no puede vectorizar ningún bucle del programa (-fopt-in
-fo-vec-missed).
+ 
 \end_layout
 
-\begin_layout Frame
-\begin_inset VSpace bigskip
+\begin_layout Itemize
+La bandera -funroll-loops no nos mejora nada.
+ 
+\end_layout
+
+\begin_layout Itemize
+El compilador avisa que no puede vectorizar ningún bucle del programa (-fopt-inf
+o-vec-missed).
+\end_layout
+
+\begin_layout Itemize
+Loop blocking no nos sirve, ya que saltamos a lugares aleatorios del array.
+\end_layout
+
+\begin_layout Itemize
+Y loop peeling?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
 
 \end_layout
 
 \begin_layout Frame
-Loop blocking no nos sirve, ya que saltamos a lugares aleatorios del array.
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tamaño del problema
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
+El programa usa un tamaño (casi) constante de memoria, un array con aproximadame
+nte 200 floats.
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/fig3.svg
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
