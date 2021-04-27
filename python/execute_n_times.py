@@ -12,18 +12,30 @@ if __name__ == "__main__":
     import os
     import numpy as np
     import config_flags
+    import runtinymc as tmc
 
     parser = argparse.ArgumentParser(
-        description='Compile code using march=native (and additional flags) and execute it n times')
+        description='Compile code using march=native, FDO, (and additional flags) and execute it n times')
     parser.add_argument("output", help="Output directory")
     parser.add_argument("--working_dir", help="Working directory")
     parser.add_argument("--iterations", type=int)
     args = parser.parse_args()
-    flags_ = config_flags.EXECUTE_N_FIXED_FLAGS
-    heat_file_paths_ = [os.path.join(args.output, "heat_{}.txt".format(i)) for i in range(args.iterations)]
-    photons_file_path_ = os.path.join(args.output, "photons.txt")
-    photons_file_paths_ = [photons_file_path_ for i in range(args.iterations)]
-    compile_gcc_and_execute_n(flags_, heat_file_paths_, photons_file_paths_, cwd=args.working_dir,
-                              iterations=args.iterations)
+    output = args.output
+    cwd = args.working_dir
+    iterations = args.iterations
+
+    # FDO
+    # Build an instrumented version of the program for edge and value profiling
+    complib.compile_gcc(config_flags.LAB1_FLAGS + [tmc.FPROFILE_GENERATE], cwd=cwd, clean_required=True)
+    # Run the instrumented version. It generates a profile data file (tiny_mc.gcda).
+    complib.execute("foo.txt", "bar.txt", cwd=cwd)
+
+    heat_file_paths_ = [os.path.join(output, "heat_{}.txt".format(i)) for i in range(iterations)]
+    photons_file_path_ = os.path.join(output, "photons.txt")
+    photons_file_paths_ = [photons_file_path_ for i in range(iterations)]
+    # Re build the source with the profile data as feedback and run it N times.
+    flags_ = config_flags.LAB1_FLAGS + [tmc.FPROFILE_USE] + config_flags.ADDITIONAL_EXEC_N_FLAGS
+    compile_gcc_and_execute_n(flags_, heat_file_paths_, photons_file_paths_, cwd=cwd,
+                              iterations=iterations)
     results = np.loadtxt(photons_file_path_)
     print(results.mean())
