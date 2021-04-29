@@ -118,10 +118,10 @@ int main(int argc, char* argv[])
     }
 
     // heading
-    printf("# %s\n# %s\n# %s\n", t1, t2, t3);
-    printf("# Scattering = %8.3f/cm\n", MU_S);
-    printf("# Absorption = %8.3f/cm\n", MU_A);
-    printf("# Photons    = %8d\n#\n", PHOTONS);
+//    printf("# %s\n# %s\n# %s\n", t1, t2, t3);
+//    printf("# Scattering = %8.3f/cm\n", MU_S);
+//    printf("# Absorption = %8.3f/cm\n", MU_A);
+//    printf("# Photons    = %8d\n#\n", PHOTONS);
 
     // start timer
     double start = wtime();
@@ -136,6 +136,7 @@ int main(int argc, char* argv[])
 
     FILE* heat_fp = fopen(heat_filepath, "w");
     FILE* photons_fp = fopen(photons_per_sec_filepath, "a");
+    printf("########################################################\n");
     printf("# Heat filepath: %s \n", heat_filepath);
     printf("# Photons filepath: %s \n", photons_per_sec_filepath);
     printf("# %lf seconds\n", elapsed);
@@ -143,8 +144,8 @@ int main(int argc, char* argv[])
     fprintf(photons_fp, "%lf\n", PHOTONS / elapsed);
     fclose(photons_fp);
 
-    printf("# Radius\tHeat\n");
-    printf("# [microns]\t[W/cm^3]\tError\n");
+//    printf("# Radius\tHeat\n");
+//    printf("# [microns]\t[W/cm^3]\tError\n");
     // 1e12 -> cubic micron to cubic cm
     // Volume of spherical shell (times PHOTONS): (t * (i * i + i + 1.0 / 3.0))
     // It is equivalent to https://en.wikipedia.org/wiki/Spherical_shell
@@ -154,8 +155,8 @@ int main(int argc, char* argv[])
                 heat_array[i].heat / t / (i * i + i + 1.0 / 3.0),
                 sqrt(heat_array[i].heat2 - heat_array[i].heat * heat_array[i].heat / PHOTONS) / t / (i * i + i + 1.0f / 3.0f));
     }
-    printf("# extra\t%12.5f\n", heat_array[SHELLS - 1].heat / PHOTONS);
+//    printf("# extra\t%12.5f\n", heat_array[SHELLS - 1].heat / PHOTONS);
     fclose(heat_fp);
-
+    printf("########################################################\n");
     return 0;
 }

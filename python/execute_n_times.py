@@ -38,4 +38,5 @@ if __name__ == "__main__":
     compile_gcc_and_execute_n(flags_, heat_file_paths_, photons_file_paths_, cwd=cwd,
                               iterations=iterations)
     results = np.loadtxt(photons_file_path_)
+    print("Average photons per second ({} iterations)".format(iterations))
     print(results.mean())
