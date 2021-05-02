@@ -22,7 +22,7 @@
 #define MICRONS_PER_SHELL 50 // Thickness of spherical shells in microns
 #endif
 
-#ifndef SEED
-#define SEED (time(NULL)) // random seed
-#endif
+//#ifndef SEED
+//#define SEED (time(NULL)) // random seed
+//#endif
 

@@ -33,14 +33,36 @@ struct heat_struct {
 
 static heat_struct heat_array[SHELLS];
 
-//typedef boost::taus88 Algorithm;
-//typedef boost::mt19937 Algorithm;
+struct pcg_state_setseq_64 {
+    uint64_t state;             // RNG state.  All values are possible.
+    uint64_t inc;               // Controls which RNG sequence (stream) is
+    // selected. Must *always* be odd.
+};
+typedef struct pcg_state_setseq_64 pcg32_random_t;
 
-typedef boost::rand48 Algorithm;
-typedef struct boost::variate_generator< Algorithm, boost::uniform_real<> > RNG;
-Algorithm rng(SEED);
-boost::uniform_real<> uni_dist(0,1);
-RNG random_float(rng, uni_dist);
+uint32_t pcg32_random_r(pcg32_random_t* rng)
+{
+    uint64_t oldstate = rng->state;
+    rng->state = oldstate * 6364136223846793005ULL + rng->inc;
+    uint32_t xorshifted = ((oldstate >> 18u) ^ oldstate) >> 27u;
+    uint32_t rot = oldstate >> 59u;
+    return (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
+}
+
+void pcg32_srandom_r(pcg32_random_t* rng, uint64_t initstate, uint64_t initseq)
+{
+    rng->state = 0U;
+    rng->inc = (initseq << 1u) | 1u;
+    pcg32_random_r(rng);
+    rng->state += initstate;
+    pcg32_random_r(rng);
+}
+
+pcg32_random_t global_rng;
+
+inline float random_float() {
+    return (pcg32_random_r(&global_rng) / (float)UINT32_MAX);
+}
 
 /***
  * Photon
@@ -122,6 +144,8 @@ int main(int argc, char* argv[])
 //    printf("# Scattering = %8.3f/cm\n", MU_S);
 //    printf("# Absorption = %8.3f/cm\n", MU_A);
 //    printf("# Photons    = %8d\n#\n", PHOTONS);
+
+    pcg32_srandom_r(&global_rng, time(NULL) ^ (intptr_t)&printf, (intptr_t)&heat_array);
 
     // start timer
     double start = wtime();
