@@ -1,26 +1,8 @@
 import subprocess as sp
 
-GCC = "g++"
-CLANG = "clang"
-
-O0 = "-O0"
-O1 = "-O1"
-O2 = "-O2"
-O3 = "-O3"
-MARCH_NATIVE = "-march=native"
-FFAST_MATH = "-ffast-math"
-GDEBUG = "-g"
-FLTO = "-flto"
-FPROFILE_GENERATE = "-fprofile-generate"  # FDO
-FPROFILE_USE = "-fprofile-use"
-
-
-def get_fprofile_use(file):
-    return FPROFILE_USE + "=" + file
-
 
 def build_compiler_param(compiler):
-    return "CXX=" + compiler
+    return "CC=" + compiler
 
 
 def build_flag_list(flags):
@@ -39,6 +21,10 @@ def compile(compiler, flags, cwd=None, clean_required=False):
     flags_string_param = build_flag_list(flags)
     compiler_param = build_compiler_param(compiler)
     sp.run(["make", compiler_param, flags_string_param], cwd=cwd)
+
+
+def clang_profiling(raw, output):
+    sp.run(["llvm-profdata", "merge", "-output=" + output, raw])
 
 
 def execute(heat_file_path, photons_file_path, cwd=None):

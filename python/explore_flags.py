@@ -24,7 +24,7 @@ def explore(output_folder_path, cwd=None, iterations=10):
             heat_file_path = os.path.join(output_folder_path, "heat_{}_{}.txt".format(i, j))
             # Execute
             complib.execute(heat_file_path, photons_file_path, cwd=cwd)
-        log_info.append({'compiler': compiler, 'optim': flags['optim'], 'photons_output': photons_file_path})
+        log_info.append({'compiler': compiler.get_compiler_str(), 'optim': flags['optim'].get_id(), 'photons_output': photons_file_path})
     save_log_info(log_info, os.path.join(output_folder_path, 'results.csv'))
     print_results(log_info)
 

@@ -1,20 +1,50 @@
 import runtinymc as tmc
+import compilers
 import time
 
 # Compiler identifiers
-COMPILERS = [tmc.GCC, tmc.CLANG]
+COMPILERS = [compilers.GCC, compilers.CLANG]
 
 # Flag identifiers
-OPTIMIZATION_FLAGS = [tmc.O0, tmc.O1, tmc.O2, tmc.O3]
+OPTIMIZATION_FLAGS = [compilers.O0, compilers.O1, compilers.O2, compilers.O3]
+
+
+def get_gcc_compiler():
+    return compilers.GCC
+
+
+def get_clang_compiler():
+    return compilers.CLANG
+
+
+def get_O3():
+    return compilers.O3
+
+
+def get_O2():
+    return compilers.O2
+
+
+def compile(compiler, flags, clean_required, cwd=None):
+    fs = [compiler.get_flag_str(f) for f in flags]
+    tmc.compile(compiler.get_compiler_str(), fs, clean_required=clean_required, cwd=cwd)
 
 
 def compile_native(compiler, flags, clean_required, cwd=None):
-    optim_flags = flags + [tmc.MARCH_NATIVE]
-    tmc.compile(compiler, optim_flags, cwd=cwd, clean_required=clean_required)
+    optim_flags = flags + [compilers.MARCH_NATIVE]
+    compile(compiler, optim_flags, clean_required, cwd=cwd)
 
 
 def compile_gcc(flags, clean_required, cwd=None):
-    tmc.compile(get_gcc_compiler(), flags, cwd=cwd, clean_required=clean_required)
+    compile(get_gcc_compiler(), flags, cwd=cwd, clean_required=clean_required)
+
+
+def compile_clang(flags, clean_required, cwd=None):
+    compile(get_clang_compiler(), flags, cwd=cwd, clean_required=clean_required)
+
+
+def clang_profiling(raw, output):
+    tmc.clang_profiling(raw, output)
 
 
 def execute(heat_file_path=None, photons_file_path=None, cwd=None):
@@ -24,19 +54,3 @@ def execute(heat_file_path=None, photons_file_path=None, cwd=None):
     if photons_file_path is None:
         photons_file_path = "photons_tmp_{}.txt".format(timestr)
     tmc.execute(heat_file_path, photons_file_path, cwd=cwd)
-
-
-def get_gcc_compiler():
-    return tmc.GCC
-
-
-def get_clang_compiler():
-    return tmc.CLANG
-
-
-def get_O3():
-    return tmc.O3
-
-
-def get_O2():
-    return tmc.O2
