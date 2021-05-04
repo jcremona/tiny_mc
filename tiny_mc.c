@@ -13,12 +13,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
+#include <stdbool.h>
 
 char t1[] = "Tiny Monte Carlo by Scott Prahl (http://omlc.ogi.edu)";
 char t2[] = "1 W Point Source Heating in Infinite Isotropic Scattering Medium";
 char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
             " and Nicolas Wolovick";
 
+static const int LANES = 8;
 
 // global state
 typedef struct heat_struct {
@@ -35,7 +37,11 @@ struct pcg_state_setseq_64 {
 };
 typedef struct pcg_state_setseq_64 pcg32_random_t;
 
-uint32_t pcg32_random_r(pcg32_random_t* rng)
+typedef struct {
+    pcg32_random_t gen[8];
+} pcg32vect_random_t;
+
+static inline uint32_t pcg32_random_r(pcg32_random_t* rng)
 {
     uint64_t oldstate = rng->state;
     rng->state = oldstate * 6364136223846793005ULL + rng->inc;
@@ -53,66 +59,128 @@ void pcg32_srandom_r(pcg32_random_t* rng, uint64_t initstate, uint64_t initseq)
     pcg32_random_r(rng);
 }
 
-pcg32_random_t global_rng;
+void pcg32vect_srandom_r(pcg32vect_random_t* rng, uint64_t* seeds, uint64_t* seqs)
+{
 
-static inline float random_float() {
-    return (pcg32_random_r(&global_rng) / (float)UINT32_MAX);
+    for(int i=0; i < LANES; i++){
+        pcg32_srandom_r(rng->gen+i, seeds[i], seqs[i]);
+    }
+
 }
+
+pcg32vect_random_t global_rng;
+
+static inline float random_float(int i) {
+    return pcg32_random_r(&global_rng.gen[i]) / (float)UINT32_MAX;
+}
+
 
 /***
  * Photon
  ***/
-
 static void photon(void)
 {
     const float albedo = MU_S / (MU_S + MU_A);
     const float shells_per_mfp = 1e4 / MICRONS_PER_SHELL / (MU_A + MU_S);
 
     /* launch */
-    float x = 0.0f;
-    float y = 0.0f;
-    float z = 0.0f;
-    float u = 0.0f;
-    float v = 0.0f;
-    float w = 1.0f;
-    float weight = 1.0f;
+    float x[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};
+    float y[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};
+    float z[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};
+    float u[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f}; // = 0.0f;
+    float v[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f}; // = 0.0f;
+    float w[LANES] = {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f}; // = 1.0f;
+    float weight[LANES] = {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f}; // = 1.0f;
+    float t[LANES];
+    unsigned int shell[LANES];
+    int break_count = 0;
+    float random_roulette[LANES];
+    float random_xi1[LANES];
+    float random_xi2[LANES];
+    float random_tmp[LANES];
+    float random_t[LANES];
+    float heat[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};;
+    float heat2[LANES] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};;
+//    bool need_clean[LANES];
 
-    for (;;) {
-        float t = -logf(random_float()); /* move */
-        x += t * u;
-        y += t * v;
-        z += t * w;
+    for(int i=0; i<LANES; i++){
+//        x[i] = 0.0f;
+//        y[i] = 0.0f;
+//        z[i] = 0.0f;
+//        u[i] = 0.0f; // = 0.0f;
+//        v[i] = 0.0f; // = 0.0f;
+//        w[i] = 1.0f; // = 1.0f;
+//        weight[i] = 1.0f; // = 1.0f;
+        t[i] = -logf(random_float(i));
+//        heat[i] = 0.0f;
+//        heat2[i] = 0.0f;
+//        need_clean[i] = false;
+    }
 
-        unsigned int shell = sqrtf(x * x + y * y + z * z) * shells_per_mfp; /* absorb */
-        if (shell > SHELLS - 1) {
-            shell = SHELLS - 1;
+    while (break_count < PHOTONS){
+        for(int i=0; i < LANES; i++){
+            random_roulette[i] = random_float(i);
+            random_t[i] = random_float(i);
+
+            float xi1, xi2,tmp;
+            do {
+                xi1 = 2.0f * random_float(i) - 1.0f;
+                xi2 = 2.0f * random_float(i) - 1.0f;
+                tmp = xi1 * xi1 + xi2 * xi2;
+            } while(tmp > 1.0f);
+            random_xi1[i] = xi1;
+            random_xi2[i] = xi2;
+            random_tmp[i] = tmp;
+
         }
 
-        heat_array[shell].heat += (1.0f - albedo) * weight;
-        heat_array[shell].heat2 += (1.0f - albedo) * (1.0f - albedo) * weight * weight; /* add up squares */
-        weight *= albedo;
+        for (int i=0; i<LANES; i++) {
+            x[i] += t[i] * u[i];
+            y[i] += t[i] * v[i];
+            z[i] += t[i] * w[i];
+            //        printf("%f %f %f\n", x[i], y[i], z[i]);
+            unsigned int shell_ = sqrtf(x[i] * x[i] + y[i] * y[i] + z[i] * z[i]) * shells_per_mfp; /* absorb */
+            if (shell_ > SHELLS - 1) {
+                shell[i] = SHELLS - 1;
+            }
+            else {
+                shell[i] = shell_;
+            }
 
-        /* Rejection method */
-        if (weight < 0.001f) { /* roulette */
-            if (random_float() > 0.1f)
-                break;
-            weight /= 0.1f;
+            heat[i] += (1.0f - albedo) * weight[i];
+            heat2[i] += (1.0f - albedo) * (1.0f - albedo) * weight[i] * weight[i]; /* add up squares */
+            weight[i] *= albedo;
+
+//            /* Rejection method */
+            if (weight[i] < 0.001f) { /* roulette */
+                weight[i] /= 0.1f;
+                if(random_roulette[i] > 0.1f) {
+                    x[i] = 0.0f;
+                    y[i] = 0.0f;
+                    z[i] = 0.0f;
+                    u[i] = 0.0f;
+                    v[i] = 0.0f;
+                    w[i] = 1.0f;
+                    weight[i] = 1.0f;
+                    break_count++;
+                }
+            }
+            else{
+                u[i] = 2.0f * random_tmp[i] - 1.0f;
+                v[i] = random_xi1[i] * 2 * sqrtf(1.0f - random_tmp[i]);
+                w[i] = random_xi2[i] * 2 * sqrtf(1.0f - random_tmp[i]);
+            }
+            t[i] = -logf(random_t[i]);
+
         }
-
-        /* New direction */
-        float xi1, xi2;
-        do {
-            xi1 = 2.0f * random_float() - 1.0f;
-            xi2 = 2.0f * random_float() - 1.0f;
-            t = xi1 * xi1 + xi2 * xi2;
-        } while (1.0f < t);
-        u = 2.0f * t - 1.0f;
-        v = xi1 * sqrtf((1.0f - u * u) / t);
-        w = xi2 * sqrtf((1.0f - u * u) / t);
-
+        for(int i=0; i < LANES; i++){
+            heat_array[shell[i]].heat += heat[i];
+            heat_array[shell[i]].heat2 += heat2[i];
+            heat[i] = 0.0f;
+            heat2[i] = 0.0f;
+        }
     }
 }
-
 
 /***
  * Main matter
@@ -140,14 +208,21 @@ int main(int argc, char* argv[])
 //    printf("# Absorption = %8.3f/cm\n", MU_A);
 //    printf("# Photons    = %8d\n#\n", PHOTONS);
 
-    pcg32_srandom_r(&global_rng, time(NULL) ^ (intptr_t)&printf, (intptr_t)&heat_array);
-
+    pcg32_random_t initial_rng;
+    pcg32_srandom_r(&initial_rng, time(NULL) ^ (intptr_t)&printf, (intptr_t)&heat_array);
+    uint64_t seeds[LANES];
+    uint64_t seqs[LANES];
+    for(int i=0; i < LANES; i++) {
+        seeds[i] = pcg32_random_r(&initial_rng);
+        seqs[i] = pcg32_random_r(&initial_rng);
+    }
+    pcg32vect_srandom_r(&global_rng, seeds, seqs);
     // start timer
     double start = wtime();
     // simulation
-    for (unsigned int i = 0; i < PHOTONS; ++i) {
+//    for (unsigned int i = 0; i < PHOTONS; ++i) {
         photon();
-    }
+//    }
     // stop timer
     double end = wtime();
     assert(start <= end);
