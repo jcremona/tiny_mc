@@ -12,12 +12,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#include <boost/random/linear_congruential.hpp> // rand48
-//#include <boost/random/mersenne_twister.hpp>  // mt
-//#include <boost/random/taus88.hpp> // taus88
-#include <boost/random/variate_generator.hpp>
-#include <boost/random/uniform_real.hpp>
+#include <inttypes.h>
 
 char t1[] = "Tiny Monte Carlo by Scott Prahl (http://omlc.ogi.edu)";
 char t2[] = "1 W Point Source Heating in Infinite Isotropic Scattering Medium";
@@ -26,10 +21,10 @@ char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
 
 
 // global state
-struct heat_struct {
+typedef struct heat_struct {
     float heat; // heat
     float heat2; // heat square
-};
+} heat_struct;
 
 static heat_struct heat_array[SHELLS];
 
@@ -60,7 +55,7 @@ void pcg32_srandom_r(pcg32_random_t* rng, uint64_t initstate, uint64_t initseq)
 
 pcg32_random_t global_rng;
 
-inline float random_float() {
+static inline float random_float() {
     return (pcg32_random_r(&global_rng) / (float)UINT32_MAX);
 }
 
