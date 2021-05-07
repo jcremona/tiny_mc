@@ -93,6 +93,25 @@ class ClangCompiler(Compiler):
                               VECT_INFO_ID: "-Rpass=loop-vectorize"}
         self._compiler_string = "clang"
 
+class ICCCompiler(Compiler):
+    def __init__(self):
+        self._map_to_flags = {O0_ID: "-O0",
+                              O1_ID: "-O1",
+                              O2_ID: "-O2",
+                              O3_ID: "-O3",
+                              MARCH_NATIVE_ID: "-march=native",
+                              FFAST_MATH_ID: "-fp-model fast=2",
+                              # GDEBUG_ID: "-g",
+                              FLTO_ID: "-ipo",
+                              FPROFILE_GENERATE_ID: "-prof-gen",
+                              FPROFILE_USE_ID: "-prof-use",
+                              FTREE_VECTORIZE_ID: "-vec",
+                              # FORCE_VECT_ID: "-mllvm -force-vector-width=8",
+                              VECT_INFO_ID: "-qopt-report=1 -qopt-report-phase=vec"}
+        # No effect for -vec if O0 or O1 is enabled.
+        self._compiler_string = "icc"
+
 
 GCC = GCCCompiler()
 CLANG = ClangCompiler()
+ICC = ICCCompiler()

@@ -17,7 +17,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Compile code using march=native, FDO, (and additional flags) and execute it n times')
     parser.add_argument("output", help="Output directory")
-    parser.add_argument("compiler", choices=['gcc', 'clang'], help="Compiler.")
+    parser.add_argument("compiler", choices=['gcc', 'clang', 'icc'], help="Compiler.")
     parser.add_argument("--working_dir", help="Working directory")
     parser.add_argument("--iterations", type=int)
     args = parser.parse_args()
@@ -29,6 +29,9 @@ if __name__ == "__main__":
         compiler = complib.get_gcc_compiler()
     elif args.compiler == "clang":
         compiler = complib.get_clang_compiler()
+    elif args.compiler == "icc":
+        compiler = complib.get_icc_compiler()
+        complib.clean_icc_profiling(cwd)
 
     # FDO
     # Build an instrumented version of the program for edge and value profiling
