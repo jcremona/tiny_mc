@@ -17,7 +17,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Compile code using march=native, FDO, (and additional flags) and execute it n times')
     parser.add_argument("output", help="Output directory")
-    parser.add_argument("compiler", choices=['gcc', 'clang'], help="Compiler.")
+    parser.add_argument("compiler", choices=['gcc', 'clang', 'icc'], help="Compiler.")
     parser.add_argument("--working_dir", help="Working directory")
     parser.add_argument("--iterations", type=int)
     args = parser.parse_args()
@@ -29,10 +29,13 @@ if __name__ == "__main__":
         compiler = complib.get_gcc_compiler()
     elif args.compiler == "clang":
         compiler = complib.get_clang_compiler()
+    elif args.compiler == "icc":
+        compiler = complib.get_icc_compiler()
+        complib.clean_icc_profiling(cwd)
 
     # FDO
     # Build an instrumented version of the program for edge and value profiling
-    complib.compile(compiler, config_flags.LAB1_FLAGS + [c.FPROFILE_GENERATE], cwd=cwd, clean_required=True)
+    complib.compile(compiler, config_flags.LAB2_FLAGS + [c.FPROFILE_GENERATE], cwd=cwd, clean_required=True)
     # Run the instrumented version. It generates a profile data file (tiny_mc.gcda).
     complib.execute("foo.txt", "bar.txt", cwd=cwd)
     profile_use_flag = c.FPROFILE_USE
@@ -46,7 +49,7 @@ if __name__ == "__main__":
     photons_file_path_ = os.path.join(output, "photons.txt")
     photons_file_paths_ = [photons_file_path_ for i in range(iterations)]
     # Re build the source with the profile data as feedback and run it N times.
-    flags_ = config_flags.LAB1_FLAGS + [profile_use_flag] + config_flags.ADDITIONAL_EXEC_N_FLAGS
+    flags_ = config_flags.LAB2_FLAGS + [profile_use_flag] + config_flags.ADDITIONAL_EXEC_N_FLAGS
     compile_and_execute_n(compiler, flags_, heat_file_paths_, photons_file_paths_, cwd=cwd,
                               iterations=iterations)
     results = np.loadtxt(photons_file_path_)

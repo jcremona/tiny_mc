@@ -9,7 +9,8 @@ FLTO_ID = "flto"
 FPROFILE_GENERATE_ID = "fprofile_generate"  # FDO
 FPROFILE_USE_ID = "fprofile_use"
 FTREE_VECTORIZE_ID = "ftree_vectorize"
-
+FORCE_VECT_ID = "force_vect"
+VECT_INFO_ID = "vect_info"
 
 class Flag:
     def __init__(self, flag_id):
@@ -43,7 +44,8 @@ FLTO = Flag(FLTO_ID)
 FPROFILE_GENERATE = Flag(FPROFILE_GENERATE_ID)
 FPROFILE_USE = Flag(FPROFILE_USE_ID)
 FTREE_VECTORIZE = Flag(FTREE_VECTORIZE_ID)
-
+FORCE_VECT = Flag(FORCE_VECT_ID)
+VECT_INFO = Flag(VECT_INFO_ID)
 
 class Compiler:
     def get_flag_str(self, flag):
@@ -69,7 +71,8 @@ class GCCCompiler(Compiler):
                               FLTO_ID: "-flto",
                               FPROFILE_GENERATE_ID: "-fprofile-generate",
                               FPROFILE_USE_ID: "-fprofile-use",
-                              FTREE_VECTORIZE_ID: "-ftree-vectorize"}
+                              FTREE_VECTORIZE_ID: "-ftree-vectorize",
+                              VECT_INFO_ID: "-fopt-info-vec"}
         self._compiler_string = "gcc"
 
 
@@ -85,9 +88,30 @@ class ClangCompiler(Compiler):
                               FLTO_ID: "-flto",
                               FPROFILE_GENERATE_ID: "-fprofile-instr-generate",
                               FPROFILE_USE_ID: "-fprofile-instr-use",
-                              FTREE_VECTORIZE_ID: "-ftree-vectorize"}
+                              FTREE_VECTORIZE_ID: "-ftree-vectorize",
+                              FORCE_VECT_ID: "-mllvm -force-vector-width=8",
+                              VECT_INFO_ID: "-Rpass=loop-vectorize"}
         self._compiler_string = "clang"
+
+class ICCCompiler(Compiler):
+    def __init__(self):
+        self._map_to_flags = {O0_ID: "-O0",
+                              O1_ID: "-O1",
+                              O2_ID: "-O2",
+                              O3_ID: "-O3",
+                              MARCH_NATIVE_ID: "-march=native",
+                              FFAST_MATH_ID: "-fp-model fast=2",
+                              # GDEBUG_ID: "-g",
+                              FLTO_ID: "-ipo",
+                              FPROFILE_GENERATE_ID: "-prof-gen",
+                              FPROFILE_USE_ID: "-prof-use",
+                              FTREE_VECTORIZE_ID: "-vec",
+                              # FORCE_VECT_ID: "-mllvm -force-vector-width=8",
+                              VECT_INFO_ID: "-qopt-report=1 -qopt-report-phase=vec"}
+        # No effect for -vec if O0 or O1 is enabled.
+        self._compiler_string = "icc"
 
 
 GCC = GCCCompiler()
 CLANG = ClangCompiler()
+ICC = ICCCompiler()

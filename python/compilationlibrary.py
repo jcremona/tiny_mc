@@ -3,7 +3,7 @@ import compilers
 import time
 
 # Compiler identifiers
-COMPILERS = [compilers.GCC, compilers.CLANG]
+COMPILERS = [compilers.GCC, compilers.CLANG, compilers.ICC]
 
 # Flag identifiers
 OPTIMIZATION_FLAGS = [compilers.O0, compilers.O1, compilers.O2, compilers.O3]
@@ -15,6 +15,10 @@ def get_gcc_compiler():
 
 def get_clang_compiler():
     return compilers.CLANG
+
+
+def get_icc_compiler():
+    return compilers.ICC
 
 
 def get_O3():
@@ -45,6 +49,10 @@ def compile_clang(flags, clean_required, cwd=None):
 
 def clang_profiling(raw, output):
     tmc.clang_profiling(raw, output)
+
+
+def clean_icc_profiling(working_dir):
+    tmc.clean_icc_profiling(working_dir)
 
 
 def execute(heat_file_path=None, photons_file_path=None, cwd=None):

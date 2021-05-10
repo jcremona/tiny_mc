@@ -27,6 +27,11 @@ def clang_profiling(raw, output):
     sp.run(["llvm-profdata", "merge", "-output=" + output, raw])
 
 
+def clean_icc_profiling(working_dir):
+    sp.call('rm ' + working_dir + "/*.dyn", shell=True)
+    sp.call('rm ' + working_dir + "/*.dpi", shell=True)
+
+
 def execute(heat_file_path, photons_file_path, cwd=None):
     # Execute tiny_mc
     sp.run(["./tiny_mc", heat_file_path, photons_file_path], cwd=cwd)
