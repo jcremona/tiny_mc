@@ -37,7 +37,7 @@ varying float random_float()
 }
 
 
-void photon(uniform int MICRONS_PER_SHELL, uniform float MU_S,uniform float MU_A, float *heat_, float *heat2_, uniform int SHELLS)
+void photon(uniform int photons, uniform int MICRONS_PER_SHELL, uniform float MU_S,uniform float MU_A, float *heat_, float *heat2_, uniform int SHELLS)
 {
     const uniform float albedo = MU_S / (MU_S + MU_A);
     const uniform float shells_per_mfp = 1e4 / MICRONS_PER_SHELL / (MU_A + MU_S);
@@ -51,8 +51,8 @@ void photon(uniform int MICRONS_PER_SHELL, uniform float MU_S,uniform float MU_A
     float v = 0.0f;
     float w = 1.0f;
     float weight = 1.0f;
-
-    for (;;) {
+    int counter = 0;
+    while(reduce_add(counter) < photons) {
         float t = -log(random_float()); /* move */
 
         x += t * u;
@@ -72,7 +72,15 @@ void photon(uniform int MICRONS_PER_SHELL, uniform float MU_S,uniform float MU_A
         /* Rejection method */
         if (weight < 0.001f) { /* roulette */
             if (random_float() > 0.1f) {
-                break;
+                x = 0.0f;
+                y = 0.0f;
+                z = 0.0f;
+                u = 0.0f;
+                v = 0.0f;
+                w = 1.0f;
+                weight = 1.0f;
+                counter++;
+                continue;
             }
             weight /= 0.1f;
         }
@@ -85,8 +93,8 @@ void photon(uniform int MICRONS_PER_SHELL, uniform float MU_S,uniform float MU_A
             t = xi1 * xi1 + xi2 * xi2;
         } while (1.0f < t);
         u = 2.0f * t - 1.0f;
-        v = xi1 * sqrt((1.0f - u * u) / t);
-        w = xi2 * sqrt((1.0f - u * u) / t);
+        v = xi1 * 2 * sqrt(1.0f - t);
+        w = xi2 * 2 * sqrt(1.0f - t);
 
     }
 }
@@ -107,10 +115,7 @@ export void run_simulation(uniform int photons,
     float *heat_ = new float[shells];
     float *heat2_ = new float[shells];
 
-
-    foreach(j = 0 ... photons) {
-        photon(microns_per_shell, mu_s, mu_a, heat_, heat2_, shells);//, heat, heat2);
-    }
+    photon(photons, microns_per_shell, mu_s, mu_a, heat_, heat2_, shells);//, heat, heat2);
 
     for(uniform int i=0; i < shells; i++) {
         heat[i] = reduce_add(heat_[i]);
