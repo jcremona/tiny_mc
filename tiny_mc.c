@@ -20,7 +20,6 @@ char t2[] = "1 W Point Source Heating in Infinite Isotropic Scattering Medium";
 char t3[] = "CPU version, adapted for PEAGPGPU by Gustavo Castellano"
             " and Nicolas Wolovick";
 
-static const int LANES = 8;
 // global state
 typedef struct heat_struct {
     float heat; // heat
