@@ -1,0 +1,878 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{listings}
+\usetheme{Warsaw}
+% or ...
+%\usetheme{Antibes}	% tree outline, neat
+%\usetheme{JuanLesPins}	% like Antibes, with shading
+%\usetheme{Bergen}	% outline on side
+%\usetheme{Luebeck}	% like Warsaw, square sides
+%\usetheme{Berkeley}	% interesting left bar outline
+%\usetheme{Madrid}	% clean, nice.  7/12 page numbers
+%\usetheme{Berlin}	% dots show slide number
+%\usetheme{Malmoe}	% OK, plain, unshaded
+%\usetheme{Boadilla}	% nice, white bg, no top bar
+%\usetheme{Marburg}	% nice, outline on right
+%\usetheme{boxes}	% ???
+%\usetheme{Montpellier}	% tree outline on top, plainish white
+%\usetheme{Copenhagen}	% like Warsaw
+%\usetheme{PaloAlto}	% looks good
+%\usetheme{Darmstadt}	% like Warsaw with circle outline
+%\usetheme{Pittsburgh}
+%\usetheme{default}
+%\usetheme{Rochester}	% like boxy, unshaded warsaw
+%\usetheme{Dresden}	% circle outline on top
+%\usetheme{Singapore}	% purple gradient top
+%\usetheme{Frankfurt}	% like Warsaw with circle outline on top
+%\usetheme{Szeged}
+%\usetheme{Goettingen}	% light purple right bar outline
+%\usetheme{Warsaw}
+%\usetheme{Hannover}	% like Goett with bar on left
+%\usetheme{compatibility}
+%\usetheme{Ilmenau}
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+%\usecolortheme{seahorse}
+%\usecolortheme{rose}
+
+% seems to fix typewriter font in outline header:
+\usepackage{ae,aecompl}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Laboratorio 2: Tiny MC
+\end_layout
+
+\begin_layout Subtitle
+Computación Paralela - FAMAF
+\end_layout
+
+\begin_layout Author
+Javier Cremona 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+Marcelo Castillo
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+J.Cremona - M.
+ Castillo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cambios respecto al Laboratorio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+En relación a lo hecho en el Laboratorio 1, se realizaron dos modificaciones:
+\end_layout
+
+\begin_layout Frame
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reemplazamos el PRNG que usábamos por PCG.
+\end_layout
+
+\begin_layout Itemize
+Agregamos el compilador de Intel icc a la lista de compiladores a usar.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Resultados Laboratorio 1 en JupiterAce
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Optimizaciones: O3, -march=native, -ffast-math, FDO
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/lab1.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Vectorización en TinyMC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/fig1.svg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Vectorización en TinyMC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Modificación Inicial:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+N generadores de números aleatorios independientes.
+ Lo convertimos en Struct of Array.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+Problemas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Los fotones no terminan todos al mismo tiempo.
+\end_layout
+
+\begin_layout Itemize
+Hay bucles para los que no se sabe en cuántas iteraciones van a finalizar.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Vectorización en TinyMC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Probamos distintas implementaciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Implementamos todo en ispc.
+\end_layout
+
+\begin_layout Enumerate
+Modificamos el método photon() buscando que el compilador autovectorice.
+ Pedimos números aleatorios antes de usarlo en el bucle principal (lo llamamos
+ rand-offline).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Modificamos el método photon() buscando que el compilador autovectorice.
+ Pedimos números aleatorios cuando se necesitan en el bucle principal (lo
+ llamamos rand-ondemand).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 1: ISPC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementamos PCG en ISPC.
+\end_layout
+
+\begin_layout Itemize
+Movimos el for que cuenta la cantidad de fotones dentro de la nueva implementaci
+ón de photon().
+\end_layout
+
+\begin_layout Itemize
+En lugar de frenar un carril cuando finaliza la simulación de un photon(),
+ reseteamos ese carril, y llevamos la cuenta de cúantos fotones llevamos
+ simulados.
+\end_layout
+
+\begin_layout Itemize
+Llevamos N arreglos heat y heat2 para evitar race conditions, al finalizar
+ toda la simulación juntamos todo en único arreglo y lo retornamos a C.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 1: ISPC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/ispc_photons.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 1: ISPC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/ispc_lanes.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 2: rand-offline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Convertimos las variables escalares del método photon() en arreglos de N
+ elementos.
+\end_layout
+
+\begin_layout Itemize
+Movimos el for que cuenta la cantidad de fotones dentro de la nueva implementaci
+ón de photon().
+\end_layout
+
+\begin_layout Itemize
+En lugar de frenar un carril cuando finaliza la simulación de un photon(),
+ reseteamos ese carril, y llevamos la cuenta de cúantos fotones llevamos
+ simulados.
+\end_layout
+
+\begin_layout Itemize
+Los números aleatorios que se van a usar en una iteración del bucle principal
+ se piden antes de iniciar una nueva iteración.
+ Así evitamos frenar los carriles dentro del bucle principal.
+\end_layout
+
+\begin_layout Itemize
+Al final de cada iteración, acumulamos el calor en la capa correspondiente.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 2: rand-offline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/rand_offline_photons.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 2: rand-offline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/rand_offline_lanes.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 3: rand-ondemand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Similar al Caso 2, excepto que aquí los números aleatorios se piden dentro
+ del bucle.
+\end_layout
+
+\begin_layout Itemize
+Llevamos una máscara durante toda la ejecución del bucle.
+ Si el par de números aleatorios no cumple con la condición de pertenecer
+ al círculo unitario, se para ese único carril usando la máscara.
+ Así evitamos iterar con un inner loop (do-while) para el cual no sabemos
+ cuántas iteraciones va a realizar.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 3: rand-ondemand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/rand_ondemand_photons.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Caso 3: rand-ondemand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/rand_ondemand_lanes.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Algunas cuestiones...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En Sandy Bridge, prácticamente no hay diferencia entre los casos 2 y 3.
+\end_layout
+
+\begin_layout Itemize
+En Sandy Bridge, icc vectoriza loops con O2 que con O3 no puede vectorizar.
+\end_layout
+
+\begin_layout Itemize
+En varios casos, tanto en Sandy Bridge como en Broadwell, se observaron
+ mejores resultados con 16 lanes...
+ aunque no tenemos AVX512!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Resumen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Probamos diferentes implementaciones.
+\end_layout
+
+\begin_layout Itemize
+El código de ispc es más legible.
+\end_layout
+
+\begin_layout Itemize
+Para los casos 2 y 3, se requirió mayor esfuerzo del programador.
+\end_layout
+
+\begin_layout Itemize
+icc fue más eficiente al autovectorizar.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
