@@ -1,0 +1,4 @@
+#Compiler,Photons=327680
+gcc,517240.903
+clang,481325.145
+icc,375135.286
