@@ -30,8 +30,8 @@ typedef struct heat_struct {
 static heat_struct heat_array[SHELLS];
 
 typedef struct {
-    uint64_t state[LANES];
-    uint64_t inc[LANES];
+    uint64_t state[LANES]  __attribute__((aligned(32)));
+    uint64_t inc[LANES]  __attribute__((aligned(32)));
 } pcg32vect_random_t;
 
 
@@ -95,6 +95,7 @@ static void photon(pcg32vect_random_t* rng, float* local_heat_array, float* loca
 
     bool mask_exec[LANES] __attribute__((aligned(32)));
 
+    #pragma omp simd
     for(int i=0; i<LANES; i++){
         x[i] = 0.0f;
         y[i] = 0.0f;
@@ -109,8 +110,12 @@ static void photon(pcg32vect_random_t* rng, float* local_heat_array, float* loca
         mask_exec[i] = true;
     }
 
+    #ifdef _OPENMP
     while (break_count < PHOTONS/omp_get_num_threads()){
-
+    #else
+    while (break_count < PHOTONS){
+    #endif
+	#pragma omp simd
         for (int i=0; i<LANES; i++) {
             if(mask_exec[i]) {
                 x[i] += t[i] * u[i];
