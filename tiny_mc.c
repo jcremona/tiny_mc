@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <inttypes.h>
 #include <stdbool.h>
+#include <omp.h>
 
 char t1[] = "Tiny Monte Carlo by Scott Prahl (http://omlc.ogi.edu)";
 char t2[] = "1 W Point Source Heating in Infinite Isotropic Scattering Medium";
@@ -36,8 +37,6 @@ typedef struct {
 
 static inline uint32_t randcalc(uint64_t oldstate)
 {
-//    uint64_t oldstate = rng->state;
-//    rng->state = oldstate * 6364136223846793005ULL + rng->inc;
     uint32_t xorshifted = ((oldstate >> 18u) ^ oldstate) >> 27u;
     uint32_t rot = oldstate >> 59u;
     return (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
@@ -51,31 +50,26 @@ void pcg32vect_srandom_r(pcg32vect_random_t* rng, uint64_t* seeds, uint64_t* seq
         rng->state[i] = 0U;
         rng->inc[i] = (seqs[i] << 1u) | 1u;
         rng->state[i] = rng->state[i] * 6364136223846793005ULL + rng->inc[i];
-//        pcg32_random_r(rng);
         rng->state[i] += seeds[i];
         rng->state[i] = rng->state[i] * 6364136223846793005ULL + rng->inc[i];
-//        pcg32_random_r(rng);
 
-//        pcg32_srandom_r(rng->gen+i, seeds[i], seqs[i]);
     }
 
 }
 
-pcg32vect_random_t global_rng;
-
-static inline float random_float(int i) {
-    uint64_t oldstate = global_rng.state[i];
-    uint64_t inc = global_rng.inc[i];
+static inline float random_float(pcg32vect_random_t* rng, int i) {
+    uint64_t oldstate = rng->state[i];
+    uint64_t inc = rng->inc[i];
     uint64_t newstate = oldstate * 6364136223846793005ULL + inc;
-    global_rng.state[i] = newstate;
-    return randcalc(oldstate) / (float)UINT32_MAX; //pcg32_random_r(&global_rng.gen[i]) / (float)UINT32_MAX;
+    rng->state[i] = newstate;
+    return randcalc(oldstate) / (float)UINT32_MAX;
 }
 
 
 /***
  * Photon
  ***/
-static void photon(void)
+static void photon(pcg32vect_random_t* rng)
 {
     const float albedo = MU_S / (MU_S + MU_A);
     const float shells_per_mfp = 1e4 / MICRONS_PER_SHELL / (MU_A + MU_S);
@@ -91,15 +85,20 @@ static void photon(void)
     float t[LANES];
     unsigned int shell[LANES];
     int break_count = 0;
-    float random_roulette[LANES];
+
     float random_xi1[LANES];
     float random_xi2[LANES];
     float random_tmp[LANES];
-    float random_t[LANES];
+
     float heat[LANES];
     float heat2[LANES];
-//    bool need_clean[LANES];
+    heat_struct local_heat_array[SHELLS];
+
     bool mask_exec[LANES] __attribute__((aligned(32)));
+    for(int i=0; i<SHELLS; ++i) {
+        local_heat_array[i].heat = 0.0f;
+        local_heat_array[i].heat2 = 0.0f;
+    }
     for(int i=0; i<LANES; i++){
         x[i] = 0.0f;
         y[i] = 0.0f;
@@ -108,20 +107,20 @@ static void photon(void)
         v[i] = 0.0f;
         w[i] = 1.0f;
         weight[i] = 1.0f;
-        t[i] = -logf(random_float(i));
+        t[i] = -logf(random_float(rng, i));
         heat[i] = 0.0f;
         heat2[i] = 0.0f;
         mask_exec[i] = true;
     }
 
-    while (break_count < PHOTONS){
+    while (break_count < PHOTONS/omp_get_num_threads()){
 
         for (int i=0; i<LANES; i++) {
             if(mask_exec[i]) {
                 x[i] += t[i] * u[i];
                 y[i] += t[i] * v[i];
                 z[i] += t[i] * w[i];
-                //        printf("%f %f %f\n", x[i], y[i], z[i]);
+
                 unsigned int shell_ = sqrtf(x[i] * x[i] + y[i] * y[i] + z[i] * z[i]) * shells_per_mfp; /* absorb */
                 if (shell_ > SHELLS - 1) {
                     shell[i] = SHELLS - 1;
@@ -133,8 +132,8 @@ static void photon(void)
                 weight[i] *= albedo;
             }
 
-//            /* Rejection method */
-            if (mask_exec[i] && weight[i] < 0.001f && random_float(i) > 0.1f) { /* roulette */
+            /* Rejection method */
+            if (mask_exec[i] && weight[i] < 0.001f && random_float(rng, i) > 0.1f) { /* roulette */
                 x[i] = 0.0f;
                 y[i] = 0.0f;
                 z[i] = 0.0f;
@@ -145,8 +144,8 @@ static void photon(void)
                 break_count++;
             }
             else{
-                random_xi1[i] = 2.0f * random_float(i) - 1.0f;
-                random_xi2[i] = 2.0f * random_float(i) - 1.0f;
+                random_xi1[i] = 2.0f * random_float(rng, i) - 1.0f;
+                random_xi2[i] = 2.0f * random_float(rng, i) - 1.0f;
                 random_tmp[i] = random_xi1[i] * random_xi1[i] + random_xi2[i] * random_xi2[i];
                 if(random_tmp[i] < 1.0f) {
                     u[i] = 2.0f * random_tmp[i] - 1.0f;
@@ -157,7 +156,7 @@ static void photon(void)
                 else
                     mask_exec[i] = false;
             }
-            t[i] = -logf(random_float(i));
+            t[i] = -logf(random_float(rng, i));
 
             if(weight[i] < 0.001f && mask_exec[i]) {
                 weight[i] /= 0.1f;
@@ -167,11 +166,18 @@ static void photon(void)
 
         }
         for(int i=0; i < LANES; i++){
-            heat_array[shell[i]].heat += heat[i];
-            heat_array[shell[i]].heat2 += heat2[i];
+            local_heat_array[shell[i]].heat += heat[i];
+            local_heat_array[shell[i]].heat2 += heat2[i];
             heat[i] = 0.0f;
             heat2[i] = 0.0f;
         }
+    }
+    for(int i=0; i<SHELLS; ++i) {
+        #pragma omp atomic
+        heat_array[i].heat += local_heat_array[i].heat;
+        #pragma omp atomic
+        heat_array[i].heat2 += local_heat_array[i].heat2;
+
     }
 }
 
@@ -201,22 +207,37 @@ int main(int argc, char* argv[])
 //    printf("# Absorption = %8.3f/cm\n", MU_A);
 //    printf("# Photons    = %8d\n#\n", PHOTONS);
 
+    for(int i=0; i<SHELLS; ++i) {
+        heat_array[i].heat = 0.0f;
+        heat_array[i].heat2 = 0.0f;
 
-    uint64_t seeds[LANES];
-    uint64_t seqs[LANES];
-    for(int i=0; i < LANES; i++) {
-        seeds[i] = i * time(NULL) + (intptr_t)&seqs; //pcg32_random_r(&initial_rng);
-        seqs[i] = M_PI * i * time(NULL) + (intptr_t)&seeds;//pcg32_random_r(&initial_rng);
+    }
+    double start,end;
+#pragma omp parallel
+    {
+        pcg32vect_random_t rng;
+        uint64_t seeds[LANES];
+        uint64_t seqs[LANES];
+        for (int i = 0; i < LANES; i++) {
+            seeds[i] = i * time(NULL) + (intptr_t)&seqs; //pcg32_random_r(&initial_rng);
+            seqs[i] = M_PI * i * time(NULL) + (intptr_t)&seeds; //pcg32_random_r(&initial_rng);
+        }
+
+        pcg32vect_srandom_r(&rng, seeds, seqs);
+        // start timer
+        #pragma omp single
+        start = wtime();
+        // simulation
+        #pragma omp task
+        photon(&rng);
+        #pragma omp barrier
+
+        #pragma omp single
+        end = wtime();
     }
 
-    pcg32vect_srandom_r(&global_rng, seeds, seqs);
-    // start timer
-    double start = wtime();
-    // simulation
-    photon();
-
     // stop timer
-    double end = wtime();
+
     assert(start <= end);
     double elapsed = end - start;
 

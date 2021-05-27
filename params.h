@@ -7,7 +7,7 @@
 #endif
 
 #ifndef PHOTONS
-#define PHOTONS 32768 // 32K photons
+#define PHOTONS 327680 // 32K photons
 #endif
 
 #ifndef MU_A
@@ -23,7 +23,7 @@
 #endif
 
 #ifndef LANES
-#define LANES 8
+#define LANES 16
 #endif
 
 //#ifndef SEED

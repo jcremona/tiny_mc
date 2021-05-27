@@ -11,6 +11,7 @@ FPROFILE_USE_ID = "fprofile_use"
 FTREE_VECTORIZE_ID = "ftree_vectorize"
 FORCE_VECT_ID = "force_vect"
 VECT_INFO_ID = "vect_info"
+OPEN_MP_ID = "openmp"
 
 class Flag:
     def __init__(self, flag_id):
@@ -46,6 +47,7 @@ FPROFILE_USE = Flag(FPROFILE_USE_ID)
 FTREE_VECTORIZE = Flag(FTREE_VECTORIZE_ID)
 FORCE_VECT = Flag(FORCE_VECT_ID)
 VECT_INFO = Flag(VECT_INFO_ID)
+OPEN_MP = Flag(OPEN_MP_ID)
 
 class Compiler:
     def get_flag_str(self, flag):
@@ -72,6 +74,7 @@ class GCCCompiler(Compiler):
                               FPROFILE_GENERATE_ID: "-fprofile-generate",
                               FPROFILE_USE_ID: "-fprofile-use",
                               FTREE_VECTORIZE_ID: "-ftree-vectorize",
+                              OPEN_MP_ID: "-fopenmp",
                               VECT_INFO_ID: "-fopt-info-vec"}
         self._compiler_string = "gcc"
 
@@ -90,6 +93,7 @@ class ClangCompiler(Compiler):
                               FPROFILE_USE_ID: "-fprofile-instr-use",
                               FTREE_VECTORIZE_ID: "-ftree-vectorize",
                               FORCE_VECT_ID: "-mllvm -force-vector-width=8",
+                              OPEN_MP_ID: "-fopenmp",
                               VECT_INFO_ID: "-Rpass=loop-vectorize"}
         self._compiler_string = "clang"
 
@@ -107,6 +111,7 @@ class ICCCompiler(Compiler):
                               FPROFILE_USE_ID: "-prof-use",
                               FTREE_VECTORIZE_ID: "-vec",
                               # FORCE_VECT_ID: "-mllvm -force-vector-width=8",
+                              OPEN_MP_ID: "-qopenmp",
                               VECT_INFO_ID: "-qopt-report=1 -qopt-report-phase=vec"}
         # No effect for -vec if O0 or O1 is enabled.
         self._compiler_string = "icc"
