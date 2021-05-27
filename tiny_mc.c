@@ -69,7 +69,7 @@ static inline float random_float(pcg32vect_random_t* rng, int i) {
 /***
  * Photon
  ***/
-static void photon(pcg32vect_random_t* rng)
+static void photon(pcg32vect_random_t* rng, float* local_heat_array, float* local_heat2_array)
 {
     const float albedo = MU_S / (MU_S + MU_A);
     const float shells_per_mfp = 1e4 / MICRONS_PER_SHELL / (MU_A + MU_S);
@@ -92,13 +92,9 @@ static void photon(pcg32vect_random_t* rng)
 
     float heat[LANES];
     float heat2[LANES];
-    heat_struct local_heat_array[SHELLS];
 
     bool mask_exec[LANES] __attribute__((aligned(32)));
-    for(int i=0; i<SHELLS; ++i) {
-        local_heat_array[i].heat = 0.0f;
-        local_heat_array[i].heat2 = 0.0f;
-    }
+
     for(int i=0; i<LANES; i++){
         x[i] = 0.0f;
         y[i] = 0.0f;
@@ -166,19 +162,13 @@ static void photon(pcg32vect_random_t* rng)
 
         }
         for(int i=0; i < LANES; i++){
-            local_heat_array[shell[i]].heat += heat[i];
-            local_heat_array[shell[i]].heat2 += heat2[i];
+            local_heat_array[shell[i]] += heat[i];
+            local_heat2_array[shell[i]] += heat2[i];
             heat[i] = 0.0f;
             heat2[i] = 0.0f;
         }
     }
-    for(int i=0; i<SHELLS; ++i) {
-        #pragma omp atomic
-        heat_array[i].heat += local_heat_array[i].heat;
-        #pragma omp atomic
-        heat_array[i].heat2 += local_heat_array[i].heat2;
 
-    }
 }
 
 /***
@@ -224,19 +214,30 @@ int main(int argc, char* argv[])
         }
 
         pcg32vect_srandom_r(&rng, seeds, seqs);
+//        heat_struct local_heat_array[SHELLS];
+        float local_heat_array[SHELLS];
+        float local_heat2_array[SHELLS];
+        for(int i=0; i<SHELLS; ++i) {
+            local_heat_array[i] = 0.0f;
+            local_heat2_array[i] = 0.0f;
+        }
+
         // start timer
         #pragma omp single
         start = wtime();
         // simulation
-        #pragma omp task
-        photon(&rng);
-        #pragma omp barrier
+        photon(&rng,local_heat_array,local_heat2_array);
 
-        #pragma omp single
-        end = wtime();
+        for(int i=0; i<SHELLS; ++i) {
+            #pragma omp atomic
+            heat_array[i].heat += local_heat_array[i];
+            #pragma omp atomic
+            heat_array[i].heat2 += local_heat2_array[i];
+        }
+
     }
-
     // stop timer
+    end = wtime();
 
     assert(start <= end);
     double elapsed = end - start;
