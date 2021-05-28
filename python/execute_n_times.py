@@ -19,6 +19,7 @@ if __name__ == "__main__":
     parser.add_argument("output", help="Output directory")
     parser.add_argument("compiler", choices=['gcc', 'clang', 'icc'], help="Compiler.")
     parser.add_argument("--working_dir", help="Working directory")
+    parser.add_argument("--openmp", action='store_true', help="Enable OpenMP")
     parser.add_argument("--iterations", type=int)
     args = parser.parse_args()
     output = args.output
@@ -33,9 +34,14 @@ if __name__ == "__main__":
         compiler = complib.get_icc_compiler()
         complib.clean_icc_profiling(cwd)
 
+    LAB3_FLAGS = []
+    if args.openmp:
+        LAB3_FLAGS = [c.OPEN_MP]
+
     # FDO
     # Build an instrumented version of the program for edge and value profiling
-    complib.compile(compiler, config_flags.LAB2_FLAGS + [c.FPROFILE_GENERATE], cwd=cwd, clean_required=True)
+    complib.compile(compiler, config_flags.LAB2_FLAGS + [c.FPROFILE_GENERATE] + LAB3_FLAGS, cwd=cwd,
+                    clean_required=True)
     # Run the instrumented version. It generates a profile data file (tiny_mc.gcda).
     complib.execute("foo.txt", "bar.txt", cwd=cwd)
     profile_use_flag = c.FPROFILE_USE
@@ -49,9 +55,9 @@ if __name__ == "__main__":
     photons_file_path_ = os.path.join(output, "photons.txt")
     photons_file_paths_ = [photons_file_path_ for i in range(iterations)]
     # Re build the source with the profile data as feedback and run it N times.
-    flags_ = config_flags.LAB2_FLAGS + [profile_use_flag] + config_flags.ADDITIONAL_EXEC_N_FLAGS
+    flags_ = config_flags.LAB2_FLAGS + [profile_use_flag] + config_flags.ADDITIONAL_EXEC_N_FLAGS + LAB3_FLAGS
     compile_and_execute_n(compiler, flags_, heat_file_paths_, photons_file_paths_, cwd=cwd,
-                              iterations=iterations)
+                          iterations=iterations)
     results = np.loadtxt(photons_file_path_)
     print("Average photons per second ({} iterations)".format(iterations))
     print(results.mean())
