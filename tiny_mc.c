@@ -207,9 +207,15 @@ int main(int argc, char* argv[])
         heat_array[i].heat2 = 0.0f;
 
     }
+    int num_threads=1; // default
     double start,end;
 #pragma omp parallel
     {
+	#ifdef _OPENMP
+	 #pragma omp single
+         num_threads = omp_get_num_threads();
+	#endif
+
         pcg32vect_random_t rng;
         uint64_t seeds[LANES];
         uint64_t seqs[LANES];
@@ -250,6 +256,7 @@ int main(int argc, char* argv[])
     FILE* heat_fp = fopen(heat_filepath, "w");
     FILE* photons_fp = fopen(photons_per_sec_filepath, "a");
     printf("########################################################\n");
+    printf("# Threads: %d\n", num_threads);
     printf("# Heat filepath: %s \n", heat_filepath);
     printf("# Photons filepath: %s \n", photons_per_sec_filepath);
     printf("# %lf seconds\n", elapsed);
