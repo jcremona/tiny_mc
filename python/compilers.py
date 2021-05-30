@@ -112,7 +112,7 @@ class ICCCompiler(Compiler):
                               FTREE_VECTORIZE_ID: "-vec",
                               # FORCE_VECT_ID: "-mllvm -force-vector-width=8",
                               OPEN_MP_ID: "-qopenmp",
-                              VECT_INFO_ID: "-qopt-report=1 -qopt-report-phase=vec"}
+                              VECT_INFO_ID: "-qopt-report=5 -qopt-report-phase=vec"}
         # No effect for -vec if O0 or O1 is enabled.
         self._compiler_string = "icc"
 
@@ -120,3 +120,4 @@ class ICCCompiler(Compiler):
 GCC = GCCCompiler()
 CLANG = ClangCompiler()
 ICC = ICCCompiler()
+
