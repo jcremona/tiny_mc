@@ -41,7 +41,7 @@ git checkout tags/Lab1Corregido
 Cambiamos el generador de números aleatorios, ahora implementamos y usamos PCG.
 Para correr:
 ```
-./execute_n_times <COMPILER> <N>
+./execute_n_times.sh <COMPILER> <N>
 ```
 donde `COMPILER` es `gcc` o `clang` y `N` es la cantidad de veces que se va a ejecutar `tiny_mc`.
 Corre con `-O3 -ffast-math -march=native` y FDO.
@@ -80,6 +80,36 @@ En este laboratorio buscamos vectorizar. Probamos 3 implementaciones: una con IS
   
 Para correr:
 ```
-./execute_n_times <COMPILER> <N>
+./execute_n_times.sh <COMPILER> <N>
 ```
 donde `COMPILER` es `gcc`,`clang` o `icc` y `N` es la cantidad de veces que se va a ejecutar `tiny_mc`.
+
+## Laboratorio 3
+* [Presentación](https://youtu.be/Q809NeAs9Eg)
+* Ver `doc/informe3` 
+
+### Dependencias
+* python3
+* gcc
+* icc
+
+### Código Entregado
+Cambiamos mínimamente el código para usar OpenMP (ver Presentación). Se agregan scripts de Slurm para correr en los servidores.
+Para ver esta versión:
+```
+git checkout tags/Lab3OMP
+```
+
+Para correr la versión con OpenMP:
+```
+OMP_NUM_THREADS=<N_THREADS> ./execute_n_times.sh -p -n <N> <COMPILER>
+```
+donde `N_THREADS` es la cantidad de hilos a usar, `COMPILER` es `gcc`,`clang` o `icc` 
+y `N` es la cantidad de veces que se va a ejecutar `tiny_mc`.
+
+Para correr la versión secuencial hay que remover la bandera `-p`. La versión secuencial no usa OpenMP, 
+notar que no es lo mismo que usar `OMP_NUM_THREADS=1`, pues esto implicaría usar OpenMP y agregar trabajo extra.
+Por lo tanto, para correr la versión secuencial:
+```
+./execute_n_times.sh -n <N> <COMPILER>
+```
