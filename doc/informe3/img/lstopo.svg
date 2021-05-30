@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="851"
+   height="567"
+   viewBox="0 0 850px 566px"
+   version="1.1"
+   id="svg158"
+   sodipodi:docname="lst.svg"
+   inkscape:version="1.0.2 (1.0.2+r75+1)">
+  <metadata
+     id="metadata164">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs162" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1848"
+     inkscape:window-height="1001"
+     id="namedview160"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.4257951"
+     inkscape:cx="471.42489"
+     inkscape:cy="87.11834"
+     inkscape:window-x="72"
+     inkscape:window-y="41"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg158" />
+  <rect
+     id="Machine_0_rect"
+     class="Machine"
+     x="0.5"
+     y="0.5"
+     width="850"
+     height="528"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Machine_0_text"
+     class="Machine"
+     font-family="Monospace"
+     x="7.5"
+     y="17.5"
+     fill="#000000"
+     font-size="10px">Machine (126GB total)</text>
+  <rect
+     id="Package_0_rect"
+     class="Package"
+     x="7.5"
+     y="24.5"
+     width="518"
+     height="497"
+     fill="#d2e7a4"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Package_0_text"
+     class="Package"
+     font-family="Monospace"
+     x="14.5"
+     y="41.5"
+     fill="#000000"
+     font-size="10px">Package L#0</text>
+  <rect
+     id="L3_0_rect"
+     class="L3"
+     x="14.5"
+     y="79.5"
+     width="297"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L3_0_text"
+     class="L3"
+     font-family="Monospace"
+     x="21.5"
+     y="96.5"
+     fill="#000000"
+     font-size="10px">L3 (35MB)</text>
+  <rect
+     id="L2_0_rect"
+     class="L2"
+     x="14.5"
+     y="110.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_0_text"
+     class="L2"
+     font-family="Monospace"
+     x="21.5"
+     y="127.5"
+     fill="#000000"
+     font-size="10px">L2 (256KB)</text>
+  <rect
+     id="L1d_0_rect"
+     class="L1d"
+     x="14.5"
+     y="141.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1d_0_text"
+     class="L1d"
+     font-family="Monospace"
+     x="21.5"
+     y="158.5"
+     fill="#000000"
+     font-size="10px">L1d (32KB)</text>
+  <rect
+     id="L1i_0_rect"
+     class="L1i"
+     x="14.5"
+     y="172.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1i_0_text"
+     class="L1i"
+     font-family="Monospace"
+     x="21.5"
+     y="189.5"
+     fill="#000000"
+     font-size="10px">L1i (32KB)</text>
+  <rect
+     id="Core_0_rect"
+     class="Core"
+     x="14.5"
+     y="203.5"
+     width="70"
+     height="69"
+     fill="#bebebe"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Core_0_text"
+     class="Core"
+     font-family="Monospace"
+     x="21.5"
+     y="220.5"
+     fill="#000000"
+     font-size="10px">Core L#0</text>
+  <rect
+     id="PU_0_rect"
+     class="PU"
+     x="21.5"
+     y="227.5"
+     width="56"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PU_0_text"
+     class="PU"
+     font-family="Monospace"
+     x="31.5"
+     y="244.5"
+     fill="#000000"
+     font-size="10px">PU L#0</text>
+  <text
+     id="PU_0_text_1"
+     class="PU"
+     font-family="Monospace"
+     x="40.5"
+     y="258.5"
+     fill="#000000"
+     font-size="10px">P#0</text>
+  <rect
+     id="L2_1_rect"
+     class="L2"
+     x="95.5"
+     y="110.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_1_text"
+     class="L2"
+     font-family="Monospace"
+     x="102.5"
+     y="127.5"
+     fill="#000000"
+     font-size="10px">L2 (256KB)</text>
+  <rect
+     id="L1d_1_rect"
+     class="L1d"
+     x="95.5"
+     y="141.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1d_1_text"
+     class="L1d"
+     font-family="Monospace"
+     x="102.5"
+     y="158.5"
+     fill="#000000"
+     font-size="10px">L1d (32KB)</text>
+  <rect
+     id="L1i_1_rect"
+     class="L1i"
+     x="95.5"
+     y="172.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1i_1_text"
+     class="L1i"
+     font-family="Monospace"
+     x="102.5"
+     y="189.5"
+     fill="#000000"
+     font-size="10px">L1i (32KB)</text>
+  <rect
+     id="Core_1_rect"
+     class="Core"
+     x="95.5"
+     y="203.5"
+     width="70"
+     height="69"
+     fill="#bebebe"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Core_1_text"
+     class="Core"
+     font-family="Monospace"
+     x="102.5"
+     y="220.5"
+     fill="#000000"
+     font-size="10px">Core L#1</text>
+  <rect
+     id="PU_1_rect"
+     class="PU"
+     x="102.5"
+     y="227.5"
+     width="56"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PU_1_text"
+     class="PU"
+     font-family="Monospace"
+     x="112.5"
+     y="244.5"
+     fill="#000000"
+     font-size="10px">PU L#1</text>
+  <text
+     id="PU_1_text_1"
+     class="PU"
+     font-family="Monospace"
+     x="121.5"
+     y="258.5"
+     fill="#000000"
+     font-size="10px">P#1</text>
+  <rect
+     id="L2_2_rect"
+     class="L2"
+     x="185.5"
+     y="117.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="rect31"
+     class="L2"
+     x="199.5"
+     y="117.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="rect33"
+     class="L2"
+     x="213.5"
+     y="117.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_2_text"
+     class="L2"
+     font-family="Monospace"
+     x="176.5"
+     y="138.5"
+     fill="#000000"
+     font-size="10px">14x total</text>
+  <rect
+     id="L2_13_rect"
+     class="L2"
+     x="237.5"
+     y="110.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_13_text"
+     class="L2"
+     font-family="Monospace"
+     x="244.5"
+     y="127.5"
+     fill="#000000"
+     font-size="10px">L2 (256KB)</text>
+  <rect
+     id="L1d_13_rect"
+     class="L1d"
+     x="237.5"
+     y="141.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1d_13_text"
+     class="L1d"
+     font-family="Monospace"
+     x="244.5"
+     y="158.5"
+     fill="#000000"
+     font-size="10px">L1d (32KB)</text>
+  <rect
+     id="L1i_13_rect"
+     class="L1i"
+     x="237.5"
+     y="172.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1i_13_text"
+     class="L1i"
+     font-family="Monospace"
+     x="244.5"
+     y="189.5"
+     fill="#000000"
+     font-size="10px">L1i (32KB)</text>
+  <rect
+     id="Core_13_rect"
+     class="Core"
+     x="237.5"
+     y="203.5"
+     width="70"
+     height="69"
+     fill="#bebebe"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Core_13_text"
+     class="Core"
+     font-family="Monospace"
+     x="244.5"
+     y="220.5"
+     fill="#000000"
+     font-size="10px">Core L#13</text>
+  <rect
+     id="PU_13_rect"
+     class="PU"
+     x="244.5"
+     y="227.5"
+     width="56"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PU_13_text"
+     class="PU"
+     font-family="Monospace"
+     x="251.5"
+     y="244.5"
+     fill="#000000"
+     font-size="10px">PU L#13</text>
+  <text
+     id="PU_13_text_1"
+     class="PU"
+     font-family="Monospace"
+     x="260.5"
+     y="258.5"
+     fill="#000000"
+     font-size="10px">P#13</text>
+  <rect
+     id="HostBridge_0_rect"
+     class="HostBridge"
+     x="318.5"
+     y="79.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="HostBridge_0_line"
+     class="HostBridge"
+     x1="325.5"
+     y1="82.5"
+     x2="332.5"
+     y2="82.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="HostBridge_0_line_2"
+     class="HostBridge"
+     x1="332.5"
+     y1="82.5"
+     x2="356.5"
+     y2="82.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="HostBridge_0_text_2"
+     class="HostBridge"
+     font-family="Monospace"
+     x="335.5"
+     y="95.5"
+     fill="#000000"
+     font-size="10px">4.0</text>
+  <line
+     id="HostBridge_0_line_3"
+     class="HostBridge"
+     x1="332.5"
+     y1="172.5"
+     x2="356.5"
+     y2="172.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="HostBridge_0_text_3"
+     class="HostBridge"
+     font-family="Monospace"
+     x="335.5"
+     y="185.5"
+     fill="#000000"
+     font-size="10px">2.5</text>
+  <line
+     id="HostBridge_0_line_4"
+     class="HostBridge"
+     x1="332.5"
+     y1="296.5"
+     x2="356.5"
+     y2="296.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="HostBridge_0_line_5"
+     class="HostBridge"
+     x1="332.5"
+     y1="417.5"
+     x2="356.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="HostBridge_0_text_5"
+     class="HostBridge"
+     font-family="Monospace"
+     x="335.5"
+     y="430.5"
+     fill="#000000"
+     font-size="10px">0.2</text>
+  <line
+     id="HostBridge_0_line_6"
+     class="HostBridge"
+     x1="332.5"
+     y1="448.5"
+     x2="356.5"
+     y2="448.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="HostBridge_0_line_1"
+     class="HostBridge"
+     x1="332.5"
+     y1="82.5"
+     x2="332.5"
+     y2="448.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="PCIBridge_1_rect"
+     class="PCIBridge"
+     x="356.5"
+     y="79.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_1_line"
+     class="PCIBridge"
+     x1="363.5"
+     y1="82.5"
+     x2="370.5"
+     y2="82.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_1_line_2"
+     class="PCIBridge"
+     x1="370.5"
+     y1="82.5"
+     x2="394.5"
+     y2="82.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCIBridge_1_text_2"
+     class="PCIBridge"
+     font-family="Monospace"
+     x="373.5"
+     y="95.5"
+     fill="#000000"
+     font-size="10px">4.0</text>
+  <line
+     id="PCIBridge_1_line_1"
+     class="PCIBridge"
+     x1="370.5"
+     y1="82.5"
+     x2="370.5"
+     y2="82.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="PCI_0_rect"
+     class="PCI"
+     x="394.5"
+     y="79.5"
+     width="124"
+     height="83"
+     fill="#bed295"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCI_0_text"
+     class="PCI"
+     font-family="Monospace"
+     x="401.5"
+     y="96.5"
+     fill="#000000"
+     font-size="10px">PCI 02:00.0</text>
+  <rect
+     id="CoProc_0_rect"
+     class="CoProc"
+     x="401.5"
+     y="103.5"
+     width="110"
+     height="52"
+     fill="#dedede"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="CoProc_0_text"
+     class="CoProc"
+     font-family="Monospace"
+     x="408.5"
+     y="120.5"
+     fill="#000000"
+     font-size="10px">CoProc opencl0d0</text>
+  <text
+     id="CoProc_0_text_1"
+     class="CoProc"
+     font-family="Monospace"
+     x="408.5"
+     y="134.5"
+     fill="#000000"
+     font-size="10px">68 compute units</text>
+  <text
+     id="CoProc_0_text_2"
+     class="CoProc"
+     font-family="Monospace"
+     x="408.5"
+     y="148.5"
+     fill="#000000"
+     font-size="10px">10 GB</text>
+  <rect
+     id="PCIBridge_2_rect"
+     class="PCIBridge"
+     x="356.5"
+     y="169.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_2_line"
+     class="PCIBridge"
+     x1="363.5"
+     y1="172.5"
+     x2="370.5"
+     y2="172.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_2_line_2"
+     class="PCIBridge"
+     x1="370.5"
+     y1="172.5"
+     x2="394.5"
+     y2="172.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCIBridge_2_text_2"
+     class="PCIBridge"
+     font-family="Monospace"
+     x="373.5"
+     y="185.5"
+     fill="#000000"
+     font-size="10px">2.5</text>
+  <line
+     id="PCIBridge_2_line_3"
+     class="PCIBridge"
+     x1="370.5"
+     y1="234.5"
+     x2="394.5"
+     y2="234.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCIBridge_2_text_3"
+     class="PCIBridge"
+     font-family="Monospace"
+     x="373.5"
+     y="247.5"
+     fill="#000000"
+     font-size="10px">2.5</text>
+  <line
+     id="PCIBridge_2_line_1"
+     class="PCIBridge"
+     x1="370.5"
+     y1="172.5"
+     x2="370.5"
+     y2="234.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="PCI_1_rect"
+     class="PCI"
+     x="394.5"
+     y="169.5"
+     width="80"
+     height="55"
+     fill="#bed295"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCI_1_text"
+     class="PCI"
+     font-family="Monospace"
+     x="401.5"
+     y="186.5"
+     fill="#000000"
+     font-size="10px">PCI 04:00.0</text>
+  <rect
+     id="Net_1_rect"
+     class="Net"
+     x="401.5"
+     y="193.5"
+     width="62"
+     height="24"
+     fill="#dedede"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Net_1_text"
+     class="Net"
+     font-family="Monospace"
+     x="408.5"
+     y="210.5"
+     fill="#000000"
+     font-size="10px">Net eno1</text>
+  <rect
+     id="PCI_2_rect"
+     class="PCI"
+     x="394.5"
+     y="231.5"
+     width="80"
+     height="55"
+     fill="#bed295"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCI_2_text"
+     class="PCI"
+     font-family="Monospace"
+     x="401.5"
+     y="248.5"
+     fill="#000000"
+     font-size="10px">PCI 04:00.1</text>
+  <rect
+     id="Net_2_rect"
+     class="Net"
+     x="401.5"
+     y="255.5"
+     width="62"
+     height="24"
+     fill="#dedede"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Net_2_text"
+     class="Net"
+     font-family="Monospace"
+     x="408.5"
+     y="272.5"
+     fill="#000000"
+     font-size="10px">Net eno2</text>
+  <rect
+     id="PCI_3_rect"
+     class="PCI"
+     x="356.5"
+     y="293.5"
+     width="82"
+     height="114"
+     fill="#bed295"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCI_3_text"
+     class="PCI"
+     font-family="Monospace"
+     x="363.5"
+     y="310.5"
+     fill="#000000"
+     font-size="10px">PCI 00:11.4</text>
+  <rect
+     id="Block_3_rect"
+     class="Block"
+     x="363.5"
+     y="317.5"
+     width="68"
+     height="38"
+     fill="#dedede"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Block_3_text"
+     class="Block"
+     font-family="Monospace"
+     x="370.5"
+     y="334.5"
+     fill="#000000"
+     font-size="10px">Block sdb</text>
+  <text
+     id="Block_3_text_1"
+     class="Block"
+     font-family="Monospace"
+     x="370.5"
+     y="348.5"
+     fill="#000000"
+     font-size="10px">3726 GB</text>
+  <rect
+     id="Block_4_rect"
+     class="Block"
+     x="363.5"
+     y="362.5"
+     width="68"
+     height="38"
+     fill="#dedede"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Block_4_text"
+     class="Block"
+     font-family="Monospace"
+     x="370.5"
+     y="379.5"
+     fill="#000000"
+     font-size="10px">Block sda</text>
+  <text
+     id="Block_4_text_1"
+     class="Block"
+     font-family="Monospace"
+     x="370.5"
+     y="393.5"
+     fill="#000000"
+     font-size="10px">3726 GB</text>
+  <rect
+     id="PCIBridge_3_rect"
+     class="PCIBridge"
+     x="356.5"
+     y="414.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_3_line"
+     class="PCIBridge"
+     x1="363.5"
+     y1="417.5"
+     x2="370.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_3_line_2"
+     class="PCIBridge"
+     x1="370.5"
+     y1="417.5"
+     x2="394.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCIBridge_3_text_2"
+     class="PCIBridge"
+     font-family="Monospace"
+     x="373.5"
+     y="430.5"
+     fill="#000000"
+     font-size="10px">0.2</text>
+  <line
+     id="PCIBridge_3_line_1"
+     class="PCIBridge"
+     x1="370.5"
+     y1="417.5"
+     x2="370.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="PCIBridge_4_rect"
+     class="PCIBridge"
+     x="394.5"
+     y="414.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_4_line"
+     class="PCIBridge"
+     x1="401.5"
+     y1="417.5"
+     x2="408.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_4_line_2"
+     class="PCIBridge"
+     x1="408.5"
+     y1="417.5"
+     x2="432.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <line
+     id="PCIBridge_4_line_1"
+     class="PCIBridge"
+     x1="408.5"
+     y1="417.5"
+     x2="408.5"
+     y2="417.5"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="PCI_4_rect"
+     class="PCI"
+     x="432.5"
+     y="414.5"
+     width="80"
+     height="24"
+     fill="#bed295"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCI_4_text"
+     class="PCI"
+     font-family="Monospace"
+     x="439.5"
+     y="431.5"
+     fill="#000000"
+     font-size="10px">PCI 07:00.0</text>
+  <rect
+     id="PCI_5_rect"
+     class="PCI"
+     x="356.5"
+     y="445.5"
+     width="82"
+     height="69"
+     fill="#bed295"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PCI_5_text"
+     class="PCI"
+     font-family="Monospace"
+     x="363.5"
+     y="462.5"
+     fill="#000000"
+     font-size="10px">PCI 00:1f.2</text>
+  <rect
+     id="Block_5_rect"
+     class="Block"
+     x="363.5"
+     y="469.5"
+     width="68"
+     height="38"
+     fill="#dedede"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Block_5_text"
+     class="Block"
+     font-family="Monospace"
+     x="370.5"
+     y="486.5"
+     fill="#000000"
+     font-size="10px">Block sdc</text>
+  <text
+     id="Block_5_text_1"
+     class="Block"
+     font-family="Monospace"
+     x="370.5"
+     y="500.5"
+     fill="#000000"
+     font-size="10px">223 GB</text>
+  <rect
+     id="NUMANode_0_rect"
+     class="NUMANode"
+     x="14.5"
+     y="48.5"
+     width="504"
+     height="24"
+     fill="#efdfde"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="NUMANode_0_text"
+     class="NUMANode"
+     font-family="Monospace"
+     x="21.5"
+     y="65.5"
+     fill="#000000"
+     font-size="10px">NUMANode L#0 P#0 (63GB)</text>
+  <rect
+     id="Package_1_rect"
+     class="Package"
+     x="532.5"
+     y="24.5"
+     width="311"
+     height="255"
+     fill="#d2e7a4"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Package_1_text"
+     class="Package"
+     font-family="Monospace"
+     x="539.5"
+     y="41.5"
+     fill="#000000"
+     font-size="10px">Package L#1</text>
+  <rect
+     id="L3_1_rect"
+     class="L3"
+     x="539.5"
+     y="79.5"
+     width="297"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L3_1_text"
+     class="L3"
+     font-family="Monospace"
+     x="546.5"
+     y="96.5"
+     fill="#000000"
+     font-size="10px">L3 (35MB)</text>
+  <rect
+     id="L2_14_rect"
+     class="L2"
+     x="539.5"
+     y="110.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_14_text"
+     class="L2"
+     font-family="Monospace"
+     x="546.5"
+     y="127.5"
+     fill="#000000"
+     font-size="10px">L2 (256KB)</text>
+  <rect
+     id="L1d_14_rect"
+     class="L1d"
+     x="539.5"
+     y="141.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1d_14_text"
+     class="L1d"
+     font-family="Monospace"
+     x="546.5"
+     y="158.5"
+     fill="#000000"
+     font-size="10px">L1d (32KB)</text>
+  <rect
+     id="L1i_14_rect"
+     class="L1i"
+     x="539.5"
+     y="172.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1i_14_text"
+     class="L1i"
+     font-family="Monospace"
+     x="546.5"
+     y="189.5"
+     fill="#000000"
+     font-size="10px">L1i (32KB)</text>
+  <rect
+     id="Core_14_rect"
+     class="Core"
+     x="539.5"
+     y="203.5"
+     width="70"
+     height="69"
+     fill="#bebebe"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Core_14_text"
+     class="Core"
+     font-family="Monospace"
+     x="546.5"
+     y="220.5"
+     fill="#000000"
+     font-size="10px">Core L#14</text>
+  <rect
+     id="PU_14_rect"
+     class="PU"
+     x="546.5"
+     y="227.5"
+     width="56"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PU_14_text"
+     class="PU"
+     font-family="Monospace"
+     x="553.5"
+     y="244.5"
+     fill="#000000"
+     font-size="10px">PU L#14</text>
+  <text
+     id="PU_14_text_1"
+     class="PU"
+     font-family="Monospace"
+     x="562.5"
+     y="258.5"
+     fill="#000000"
+     font-size="10px">P#14</text>
+  <rect
+     id="L2_15_rect"
+     class="L2"
+     x="620.5"
+     y="110.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_15_text"
+     class="L2"
+     font-family="Monospace"
+     x="627.5"
+     y="127.5"
+     fill="#000000"
+     font-size="10px">L2 (256KB)</text>
+  <rect
+     id="L1d_15_rect"
+     class="L1d"
+     x="620.5"
+     y="141.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1d_15_text"
+     class="L1d"
+     font-family="Monospace"
+     x="627.5"
+     y="158.5"
+     fill="#000000"
+     font-size="10px">L1d (32KB)</text>
+  <rect
+     id="L1i_15_rect"
+     class="L1i"
+     x="620.5"
+     y="172.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1i_15_text"
+     class="L1i"
+     font-family="Monospace"
+     x="627.5"
+     y="189.5"
+     fill="#000000"
+     font-size="10px">L1i (32KB)</text>
+  <rect
+     id="Core_15_rect"
+     class="Core"
+     x="620.5"
+     y="203.5"
+     width="70"
+     height="69"
+     fill="#bebebe"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Core_15_text"
+     class="Core"
+     font-family="Monospace"
+     x="627.5"
+     y="220.5"
+     fill="#000000"
+     font-size="10px">Core L#15</text>
+  <rect
+     id="PU_15_rect"
+     class="PU"
+     x="627.5"
+     y="227.5"
+     width="56"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PU_15_text"
+     class="PU"
+     font-family="Monospace"
+     x="634.5"
+     y="244.5"
+     fill="#000000"
+     font-size="10px">PU L#15</text>
+  <text
+     id="PU_15_text_1"
+     class="PU"
+     font-family="Monospace"
+     x="643.5"
+     y="258.5"
+     fill="#000000"
+     font-size="10px">P#15</text>
+  <rect
+     id="L2_16_rect"
+     class="L2"
+     x="710.5"
+     y="117.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="rect137"
+     class="L2"
+     x="724.5"
+     y="117.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <rect
+     id="rect139"
+     class="L2"
+     x="738.5"
+     y="117.5"
+     width="7"
+     height="7"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_16_text"
+     class="L2"
+     font-family="Monospace"
+     x="701.5"
+     y="138.5"
+     fill="#000000"
+     font-size="10px">14x total</text>
+  <rect
+     id="L2_27_rect"
+     class="L2"
+     x="762.5"
+     y="110.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L2_27_text"
+     class="L2"
+     font-family="Monospace"
+     x="769.5"
+     y="127.5"
+     fill="#000000"
+     font-size="10px">L2 (256KB)</text>
+  <rect
+     id="L1d_27_rect"
+     class="L1d"
+     x="762.5"
+     y="141.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1d_27_text"
+     class="L1d"
+     font-family="Monospace"
+     x="769.5"
+     y="158.5"
+     fill="#000000"
+     font-size="10px">L1d (32KB)</text>
+  <rect
+     id="L1i_27_rect"
+     class="L1i"
+     x="762.5"
+     y="172.5"
+     width="74"
+     height="24"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="L1i_27_text"
+     class="L1i"
+     font-family="Monospace"
+     x="769.5"
+     y="189.5"
+     fill="#000000"
+     font-size="10px">L1i (32KB)</text>
+  <rect
+     id="Core_27_rect"
+     class="Core"
+     x="762.5"
+     y="203.5"
+     width="70"
+     height="69"
+     fill="#bebebe"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="Core_27_text"
+     class="Core"
+     font-family="Monospace"
+     x="769.5"
+     y="220.5"
+     fill="#000000"
+     font-size="10px">Core L#27</text>
+  <rect
+     id="PU_27_rect"
+     class="PU"
+     x="769.5"
+     y="227.5"
+     width="56"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="PU_27_text"
+     class="PU"
+     font-family="Monospace"
+     x="776.5"
+     y="244.5"
+     fill="#000000"
+     font-size="10px">PU L#27</text>
+  <text
+     id="PU_27_text_1"
+     class="PU"
+     font-family="Monospace"
+     x="785.5"
+     y="258.5"
+     fill="#000000"
+     font-size="10px">P#27</text>
+  <rect
+     id="NUMANode_1_rect"
+     class="NUMANode"
+     x="539.5"
+     y="48.5"
+     width="297"
+     height="24"
+     fill="#efdfde"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="NUMANode_1_text"
+     class="NUMANode"
+     font-family="Monospace"
+     x="546.5"
+     y="65.5"
+     fill="#000000"
+     font-size="10px">NUMANode L#1 P#1 (63GB)</text>
+  <rect
+     id="anon_rect"
+     x="0.5"
+     y="528.5"
+     width="850"
+     height="38"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1" />
+  <text
+     id="anon_text"
+     font-family="Monospace"
+     x="7.5"
+     y="545.5"
+     fill="#000000"
+     font-size="10px">Host: jupiterace</text>
+  <text
+     id="anon_text_1"
+     font-family="Monospace"
+     x="7.5"
+     y="559.5"
+     fill="#000000"
+     font-size="10px">Date: Thu 27 May 2021 06:28:51 PM -03</text>
+</svg>
