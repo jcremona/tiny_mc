@@ -1,0 +1,47 @@
+advisor: Warning: The Roofline is a special batch mode of data collection. It runs two analyses one by one. There are Survey Analysis and Trip Counts Analysis with FLOP respectively.
+advisor: Starting command line: advixe-cl --collect survey -- ./tiny_mc_icc_x100
+Intel(R) Advisor Command Line Tool
+Copyright (C) 2009-2021 Intel Corporation. All rights reserved.
+advisor: Collection started. To stop the collection, either press CTRL-C or enter from another console window: advisor -r /home/cp2021cp202143/tiny_mc/e000/hs000 -command stop.
+########################################################
+# Threads: 28
+# Heat filepath: heat.txt 
+# Photons filepath: photons_per_sec.txt 
+# 1.334559 seconds
+# 24553.432702 K photons per second
+########################################################
+advisor: Collection stopped.
+advisor: Opening result 21 % Resolving information for `libittnotify_collector.
+advisor: Warning: Cannot locate debugging information for file `/opt/intel/oneapi/advisor/2021.2.0/lib64/runtime/libittnotify_collector.so'.
+advisor: Opening result 23 % Resolving information for `libtpsstool.so'        
+advisor: Warning: Cannot locate debugging information for file `/opt/intel/oneapi/advisor/2021.2.0/lib64/libtpsstool.so'.
+advisor: Opening result 99 % done                                              
+advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             
+
+Elapsed Time: 1.38s
+Total CPU time: 37.1583
+
+advisor: Starting command line: advixe-cl --collect tripcounts --flop --no-trip-counts -- ./tiny_mc_icc_x100
+Intel(R) Advisor Command Line Tool
+Copyright (C) 2009-2021 Intel Corporation. All rights reserved.
+advisor: Opening result 25 % done                                              
+advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             
+advisor: Collection started. To stop the collection, either press CTRL-C or enter from another console window: advisor -r /home/cp2021cp202143/tiny_mc/e000/trc000 -command stop.
+########################################################
+# Threads: 28
+# Heat filepath: heat.txt 
+# Photons filepath: photons_per_sec.txt 
+# 2.458926 seconds
+# 13326.143154 K photons per second
+########################################################
+advisor: Opening result 99 % done                                              
+advisor: Preparing frequently used data  0 % done                              
+advisor: Preparing frequently used data 100 % done                             
+
+Elapsed Time: 1.38s
+Total CPU time: 37.1583
+GFLOPS: 175.06
+
+

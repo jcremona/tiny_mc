@@ -1,0 +1,204 @@
+rm -f tiny_mc *.o *.profraw
+icc -std=gnu11 -Wall -Wextra -O3 -fp-model fast=2 -march=native -vec -qopt-report=1 -qopt-report-phase=vec -prof-gen -qopenmp   -c -o tiny_mc.o tiny_mc.c
+icc: remark #10397: optimization reports are generated in *.optrpt files in the output location
+icc: warning #10193: -vec is default; use -x and -ax to configure vectorization
+remark #11074: Inlining inhibited by limit max-size 
+remark #11076: To get full report use -qopt-report=4 -qopt-report-phase ipo
+icc -std=gnu11 -Wall -Wextra -O3 -fp-model fast=2 -march=native -vec -qopt-report=1 -qopt-report-phase=vec -prof-gen -qopenmp -o tiny_mc tiny_mc.o -lm 
+icc: remark #10397: optimization reports are generated in *.optrpt files in the output location
+icc: warning #10193: -vec is default; use -x and -ax to configure vectorization
+########################################################
+# Threads: 12
+# Heat filepath: foo.txt 
+# Photons filepath: bar.txt 
+# 15.080865 seconds
+# 21.728196 K photons per second
+########################################################
+rm -f tiny_mc *.o *.profraw
+icc -std=gnu11 -Wall -Wextra -O3 -fp-model fast=2 -march=native -vec -qopt-report=1 -qopt-report-phase=vec -prof-use -qopenmp   -c -o tiny_mc.o tiny_mc.c
+icc: remark #10397: optimization reports are generated in *.optrpt files in the output location
+icc: warning #10193: -vec is default; use -x and -ax to configure vectorization
+remark #30052: looking at dynamic file:	./60b2b624_933619.dyn
+remark #11074: Inlining inhibited by limit max-size 
+remark #11076: To get full report use -qopt-report=4 -qopt-report-phase ipo
+icc -std=gnu11 -Wall -Wextra -O3 -fp-model fast=2 -march=native -vec -qopt-report=1 -qopt-report-phase=vec -prof-use -qopenmp -o tiny_mc tiny_mc.o -lm 
+icc: remark #10397: optimization reports are generated in *.optrpt files in the output location
+icc: warning #10193: -vec is default; use -x and -ax to configure vectorization
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.035954 seconds
+# 9113.872805 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_1.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.035798 seconds
+# 9153.697073 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_2.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.033317 seconds
+# 9835.349946 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_3.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.033251 seconds
+# 9854.791830 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_4.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.033804 seconds
+# 9693.624503 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_5.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.032011 seconds
+# 10236.535570 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_6.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029011 seconds
+# 11295.052152 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_7.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.028992 seconds
+# 11302.266314 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_8.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.031186 seconds
+# 10507.249262 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_9.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.030285 seconds
+# 10819.918467 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_10.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029041 seconds
+# 11283.274899 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_11.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.028986 seconds
+# 11304.668845 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_12.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.028934 seconds
+# 11324.941394 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_13.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029176 seconds
+# 11231.252663 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_14.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029023 seconds
+# 11290.478005 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_15.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.028999 seconds
+# 11299.599161 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_16.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029018 seconds
+# 11292.439143 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_17.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.032563 seconds
+# 10062.960360 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_18.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029067 seconds
+# 11273.292882 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_19.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029022 seconds
+# 11290.797205 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_20.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029025 seconds
+# 11289.659616 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_21.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.029044 seconds
+# 11282.125440 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_22.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.028992 seconds
+# 11302.342921 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_23.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.032393 seconds
+# 10115.709012 K photons per second
+########################################################
+########################################################
+# Threads: 12
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/heat_24.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557/photons.txt 
+# 0.028960 seconds
+# 11314.880821 K photons per second
+########################################################
+Average photons per second (25 iterations)
+10750831.21157104
+Saved to /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210529_184557
