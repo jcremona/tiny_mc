@@ -1,4 +1,5 @@
 import subprocess as sp
+import os
 
 
 def build_compiler_param(compiler):
@@ -8,6 +9,11 @@ def build_compiler_param(compiler):
 def build_flag_list(flags):
     tmp = " ".join(flags)
     return "EXTRA_CFLAGS=" + tmp
+
+
+def build_cuda_flag_list(flags):
+    tmp = " ".join(flags)
+    return "EXTRA_CUFLAGS=" + tmp
 
 
 def clean(cwd=None):
@@ -21,6 +27,25 @@ def compile(compiler, flags, cwd=None, clean_required=False):
     flags_string_param = build_flag_list(flags)
     compiler_param = build_compiler_param(compiler)
     sp.run(["make", compiler_param, flags_string_param], cwd=cwd)
+
+
+def clean_cuda(makefile, cwd=None):
+    sp.run(["make", "clean", "-f", makefile], cwd=cwd)
+
+
+# TODO merge this method with compile.
+#  It should be a special case of compile
+def compile_cuda(flags, cwd=None, clean_required=False):
+    # Compile tiny_mc (CUDA version) using make.
+    # Compilation flags are passed as an argument.
+    makefile = "Makefile.cuda"
+    if cwd:
+        makefile = os.path.join(cwd, makefile)
+
+    if clean_required:
+        clean_cuda(makefile, cwd)
+    flags_string_param = build_cuda_flag_list(flags)
+    sp.run(["make", "-f", makefile, flags_string_param], cwd=cwd)
 
 
 def clang_profiling(raw, output):

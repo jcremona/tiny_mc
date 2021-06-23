@@ -34,6 +34,10 @@ def compile(compiler, flags, clean_required, cwd=None):
     tmc.compile(compiler.get_compiler_str(), fs, clean_required=clean_required, cwd=cwd)
 
 
+def compile_cuda(flags, clean_required, cwd=None):
+    tmc.compile_cuda(flags, clean_required=clean_required, cwd=cwd)
+
+
 def compile_native(compiler, flags, clean_required, cwd=None):
     optim_flags = flags + [compilers.MARCH_NATIVE]
     compile(compiler, optim_flags, clean_required, cwd=cwd)
