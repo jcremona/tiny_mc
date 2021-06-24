@@ -14,12 +14,14 @@ function echoUsage()
 }
 
 N_TIMES=1
-
+EXPLORE_SIZES=""
 shopt -s extglob
-while getopts "hn:" opt; do
+while getopts "hn:x" opt; do
     case "$opt" in
         h)  echoUsage
             exit 0
+            ;;
+        x)  EXPLORE_SIZES="--explore"
             ;;
         n)  case $OPTARG in
                 (+([0-9])) N_TIMES=$OPTARG ;;
@@ -37,6 +39,6 @@ shift $((OPTIND - 1))
 
 mkdir -p $OUTPUT_DIR
 
-python3 $CURRENT_DIR/python/execute_cuda.py $OUTPUT_DIR --working_dir $CURRENT_DIR --iterations $N_TIMES
+python3 $CURRENT_DIR/python/execute_cuda.py $OUTPUT_DIR --working_dir $CURRENT_DIR --iterations $N_TIMES $EXPLORE_SIZES
 echo "Saved to $OUTPUT_DIR"
 

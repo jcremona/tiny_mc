@@ -1,6 +1,6 @@
 CU=nvcc
 EXTRA_CUFLAGS=
-CUFLAGS=-O2 -Xcompiler=-Wall $(EXTRA_CUFLAGS)
+CUFLAGS=-O2 -arch=sm_75 -Xcompiler=-Wall $(EXTRA_CUFLAGS)
 LDFLAGS=
 
 TARGETS=tiny_mc
