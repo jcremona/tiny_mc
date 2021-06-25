@@ -1,17 +1,18 @@
 #include "helper_cuda.h"
 #include "params.h"
 #include "wtime.h"
-#include <cuda.h>
 #include <assert.h>
+#include <cuda.h>
 
 #ifndef BLOCK_SIZE
-#define BLOCK_SIZE 64
+#define BLOCK_SIZE 512
 #endif
 
 #ifndef PHOTONS_PER_THREAD
-#define PHOTONS_PER_THREAD 128
+#define PHOTONS_PER_THREAD 256
 #endif
 
+#define CUDA_WARP_SIZE 32
 
 struct pcg_state_setseq_64 {
     uint64_t state; // RNG state.  All values are possible.
@@ -68,13 +69,15 @@ __device__ void photon(float* heat, float* heat2, pcg32_random_t* rng)
         unsigned int shell = sqrtf(x * x + y * y + z * z) * shells_per_mfp; /* absorb */
         shell = min(shell, SHELLS - 1);
 
-        atomicAdd(heat + shell, one_minus_albedo * weight);
-        atomicAdd(heat2 + shell, one_minus_albedo * one_minus_albedo * weight * weight); /* add up squares */
+        unsigned int lane = threadIdx.x & (CUDA_WARP_SIZE - 1);
+        unsigned int offset = (lane * SHELLS) + shell;
+        atomicAdd(heat + offset, one_minus_albedo * weight);
+        atomicAdd(heat2 + offset, one_minus_albedo * one_minus_albedo * weight * weight); /* add up squares */
         weight *= albedo;
 
         /* Rejection method */
         if (weight < 0.001f) { /* roulette */
-            if (random_float(rng) > 0.1f){
+            if (random_float(rng) > 0.1f) {
                 x = 0.0f;
                 y = 0.0f;
                 z = 0.0f;
@@ -101,16 +104,18 @@ __device__ void photon(float* heat, float* heat2, pcg32_random_t* rng)
     }
 }
 
-__global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, int n){
+__global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, int n)
+{
     int gtid = blockIdx.x * blockDim.x + threadIdx.x;
-    if(gtid >= n) {
+    if (gtid >= n) {
         return;
     }
-    __shared__ float shared_heat[SHELLS];
-    __shared__ float shared_heat2[SHELLS];
+    const int shared_array_size = SHELLS * CUDA_WARP_SIZE;
+    __shared__ float shared_heat[shared_array_size];
+    __shared__ float shared_heat2[shared_array_size];
 
-    if(threadIdx.x == 0) {
-        for (int i = 0; i < SHELLS; i++) {
+    if (threadIdx.x == 0) {
+        for (int i = 0; i < shared_array_size; i++) {
             shared_heat[i] = 0.0f;
             shared_heat2[i] = 0.0f;
         }
@@ -121,15 +126,13 @@ __global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, in
     photon(shared_heat, shared_heat2, &local_rng);
 
     __syncthreads();
-    if(threadIdx.x == 0) {
-        for (int i = 0; i < SHELLS; i++) {
-            atomicAdd(heat + i, shared_heat[i]);
-            atomicAdd(heat2 + i, shared_heat2[i]);
+    if (threadIdx.x == 0) {
+        for (int i = 0; i < shared_array_size; i++) { // Better performance using SHELLS * warpSize. I don't know why
+            atomicAdd(heat + (i % SHELLS), shared_heat[i]);
+            atomicAdd(heat2 + (i % SHELLS), shared_heat2[i]);
         }
     }
-
 }
-
 
 // Ojo: Se rompe si a+b > 2^31
 int div_ceil(int a, int b)
@@ -137,7 +140,8 @@ int div_ceil(int a, int b)
     return (a + b - 1) / b;
 }
 
-float run_photon_kernel(float* heat, float* heat2, int num_threads){
+float run_photon_kernel(float* heat, float* heat2, int num_threads)
+{
     printf("%d\n", num_threads);
     pcg32_random_t* rng;
 
@@ -189,23 +193,23 @@ int main(int argc, char* argv[])
     }
 
     // heading
-//    printf("# %s\n# %s\n# %s\n", t1, t2, t3);
-//    printf("# Scattering = %8.3f/cm\n", MU_S);
-//    printf("# Absorption = %8.3f/cm\n", MU_A);
+    //    printf("# %s\n# %s\n# %s\n", t1, t2, t3);
+    //    printf("# Scattering = %8.3f/cm\n", MU_S);
+    //    printf("# Absorption = %8.3f/cm\n", MU_A);
 
 
-//    for(int i=0; i<SHELLS; ++i) {
-//        heat_array[i].heat = 0.0f;
-//        heat_array[i].heat2 = 0.0f;
-//
-//    }
+    //    for(int i=0; i<SHELLS; ++i) {
+    //        heat_array[i].heat = 0.0f;
+    //        heat_array[i].heat2 = 0.0f;
+    //
+    //    }
 
-    float *heat;
-    float *heat2;
+    float* heat;
+    float* heat2;
     checkCudaCall(cudaMallocManaged(&heat, SHELLS * sizeof(float)));
     checkCudaCall(cudaMallocManaged(&heat2, SHELLS * sizeof(float)));
 
-    for(int i=0; i<SHELLS; ++i) {
+    for (int i = 0; i < SHELLS; ++i) {
         heat[i] = 0.0f;
         heat2[i] = 0.0f;
     }
@@ -238,5 +242,4 @@ int main(int argc, char* argv[])
     fclose(heat_fp);
     printf("########################################################\n");
     return 0;
-
 }
