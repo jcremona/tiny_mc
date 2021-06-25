@@ -1,6 +1,6 @@
 #include "helper_cuda.h"
 #include "params.h"
-#include "wtime.h"
+//#include "wtime.h"
 #include <assert.h>
 #include <cuda.h>
 
@@ -69,7 +69,14 @@ __device__ void photon(float* heat, float* heat2, pcg32_random_t* rng)
         unsigned int shell = sqrtf(x * x + y * y + z * z) * shells_per_mfp; /* absorb */
         shell = min(shell, SHELLS - 1);
 
+        // Calculate lane id (0 - 31)
+        // Is it the same as threadIdx.x % CUDA_WARP_SIZE ?
         unsigned int lane = threadIdx.x & (CUDA_WARP_SIZE - 1);
+
+        // Calculate where to save the results in shared array
+        //  -  |  -  | .............. |  -  |  -  | ............ |   -   |   -   |
+        // sh0 | sh0 | ..(32 times).. | sh1 | sh1 | ............ | sh100 | sh100 |
+
         unsigned int offset = (shell * CUDA_WARP_SIZE) + lane;
         atomicAdd(heat + offset, one_minus_albedo * weight);
         atomicAdd(heat2 + offset, one_minus_albedo * one_minus_albedo * weight * weight); /* add up squares */
@@ -104,16 +111,32 @@ __device__ void photon(float* heat, float* heat2, pcg32_random_t* rng)
     }
 }
 
+/**
+ * Main kernel
+ *
+ * @param heat global array of heat
+ * @param heat2 global array of heat square
+ * @param rng global array of RNGs
+ * @param n number of threads
+ */
 __global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, int n)
 {
+    // Calculate global thread id
     int gtid = blockIdx.x * blockDim.x + threadIdx.x;
+
+    // If gtid exceeds n, return.
     if (gtid >= n) {
         return;
     }
+
+    // Allocate two arrays of size (SHELLS * CUDA_WARP_SIZE) in shared memory.
+    // TODO try with 64 instead of CUDA_WARP_SIZE.
+    //  Max amount of shared memory per block should be taken into account.
     const int shared_array_size = SHELLS * CUDA_WARP_SIZE;
     __shared__ float shared_heat[shared_array_size];
     __shared__ float shared_heat2[shared_array_size];
 
+    // Initialize arrays
     if (threadIdx.x == 0) {
         for (int i = 0; i < shared_array_size; i++) {
             shared_heat[i] = 0.0f;
@@ -122,10 +145,15 @@ __global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, in
     }
     __syncthreads();
 
+    // Local copy of rng.
     pcg32_random_t local_rng = rng[gtid];
+
+    // Launch photon
     photon(shared_heat, shared_heat2, &local_rng);
 
     __syncthreads();
+
+    // Save results in global arrays.
     if (threadIdx.x == 0) {
         for (int i = 0; i < shared_array_size; i++) { // Better performance using SHELLS * warpSize. I don't know why
             unsigned int g_offset = (i / warpSize);
@@ -136,41 +164,59 @@ __global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, in
 }
 
 // Ojo: Se rompe si a+b > 2^31
-int div_ceil(int a, int b)
+size_t div_ceil(size_t a, size_t b)
 {
     return (a + b - 1) / b;
 }
 
+/**
+ * Launch photon_kernel
+ * @param heat
+ * @param heat2
+ * @param num_threads number of threads to launch
+ * @return elapsed time
+ */
 float run_photon_kernel(float* heat, float* heat2, int num_threads)
 {
     printf("%d\n", num_threads);
     pcg32_random_t* rng;
 
+
+    // Allocate some memory for the multiple RNGs.
+    // cudaMallocManaged allocates memory in CPU and GPU that will be automatically managed.
     checkCudaCall(cudaMallocManaged(&rng, num_threads * sizeof(pcg32_random_t)));
 
     cudaEvent_t start, finish;
     checkCudaCall(cudaEventCreate(&start));
     checkCudaCall(cudaEventCreate(&finish));
 
+    // Seeds for the RNGs
     for (int i = 0; i < num_threads; ++i) {
         pcg32_srandom_r(rng + i, time(NULL) ^ (intptr_t)&printf + i, (intptr_t)&rng * i);
     }
 
 
+    // Set block size and grid size
     dim3 block(BLOCK_SIZE);
     dim3 grid(div_ceil(num_threads, block.x));
 
+    // Launch kernel
     checkCudaCall(cudaEventRecord(start));
     photon_kernel<<<grid, block>>>(heat, heat2, rng, num_threads);
     checkCudaCall(cudaGetLastError());
-
     checkCudaCall(cudaEventRecord(finish));
+
+    // Synchronize GPU and CPU
     checkCudaCall(cudaDeviceSynchronize());
 
+    // Elapsed time
     float gpu_elapsed;
     checkCudaCall(cudaEventElapsedTime(&gpu_elapsed, start, finish));
     checkCudaCall(cudaEventDestroy(start));
     checkCudaCall(cudaEventDestroy(finish));
+
+    // Free allocated memory
+    checkCudaCall(cudaFree(rng));
 
     return gpu_elapsed;
 }
@@ -179,6 +225,7 @@ float run_photon_kernel(float* heat, float* heat2, int num_threads)
 int main(int argc, char* argv[])
 {
 
+    // Output files can be passed as arguments. Otherwise, some temp files will be used.
     const char* heat_filepath;
     const char* photons_per_sec_filepath;
     if (argc == 3) {
@@ -198,15 +245,11 @@ int main(int argc, char* argv[])
     //    printf("# Scattering = %8.3f/cm\n", MU_S);
     //    printf("# Absorption = %8.3f/cm\n", MU_A);
 
-
-    //    for(int i=0; i<SHELLS; ++i) {
-    //        heat_array[i].heat = 0.0f;
-    //        heat_array[i].heat2 = 0.0f;
-    //
-    //    }
-
     float* heat;
     float* heat2;
+
+    // Allocate some memory for the heat arrays.
+    // cudaMallocManaged allocates memory in CPU and GPU that will be automatically managed.
     checkCudaCall(cudaMallocManaged(&heat, SHELLS * sizeof(float)));
     checkCudaCall(cudaMallocManaged(&heat2, SHELLS * sizeof(float)));
 
@@ -215,7 +258,10 @@ int main(int argc, char* argv[])
         heat2[i] = 0.0f;
     }
 
+    // Just make sure that PHOTONS is divisible by PHOTONS_PER_THREAD
     assert(!(PHOTONS % PHOTONS_PER_THREAD));
+
+    // Method that launches the kernel
     double elapsed = run_photon_kernel(heat, heat2, PHOTONS / PHOTONS_PER_THREAD);
     elapsed *= 1e-3;
 
@@ -241,6 +287,8 @@ int main(int argc, char* argv[])
     }
 
     fclose(heat_fp);
+    checkCudaCall(cudaFree(heat));
+    checkCudaCall(cudaFree(heat2));
     printf("########################################################\n");
     return 0;
 }
