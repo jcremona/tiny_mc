@@ -70,7 +70,7 @@ __device__ void photon(float* heat, float* heat2, pcg32_random_t* rng)
         shell = min(shell, SHELLS - 1);
 
         unsigned int lane = threadIdx.x & (CUDA_WARP_SIZE - 1);
-        unsigned int offset = (lane * SHELLS) + shell;
+        unsigned int offset = (shell * CUDA_WARP_SIZE) + lane;
         atomicAdd(heat + offset, one_minus_albedo * weight);
         atomicAdd(heat2 + offset, one_minus_albedo * one_minus_albedo * weight * weight); /* add up squares */
         weight *= albedo;
@@ -128,8 +128,9 @@ __global__ void photon_kernel(float* heat, float* heat2, pcg32_random_t* rng, in
     __syncthreads();
     if (threadIdx.x == 0) {
         for (int i = 0; i < shared_array_size; i++) { // Better performance using SHELLS * warpSize. I don't know why
-            atomicAdd(heat + (i % SHELLS), shared_heat[i]);
-            atomicAdd(heat2 + (i % SHELLS), shared_heat2[i]);
+            unsigned int g_offset = (i / warpSize);
+            atomicAdd(heat + g_offset, shared_heat[i]);
+            atomicAdd(heat2 + g_offset, shared_heat2[i]);
         }
     }
 }
