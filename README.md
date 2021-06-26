@@ -113,3 +113,45 @@ Por lo tanto, para correr la versión secuencial:
 ```
 ./execute_n_times.sh -n <N> <COMPILER>
 ```
+
+## Laboratorio 4
+* [Presentación](https://youtu.be/I8k47GMEWf4)
+* Ver `doc/informe4`
+
+### Dependencias
+* python3
+* cuda
+* nvcc
+
+### Código Entregado
+Portamos el problema a CUDA. Nos basamos en la versión de Lab 1 corregida.
+Para ver esta versión:
+```
+git checkout tags/Lab4CUDA
+```
+
+Para correr esta versión:
+```
+./execute_cuda_n_times.sh -n <N>
+```
+
+donde `N` es la cantidad de veces que se va a ejecutar `tiny_mc`. Para ejecutar una versión que recorre
+distintos tamaños de bloque y distinta cantidad de fotones por hilo, y genera un heatmap:
+```
+./execute_cuda_n_times.sh -x -n <N>
+```
+
+Para correr el profiling que genera un reporte completo (incluye roofline):
+```
+ncu -f -o tiny_kernel --set full ./tiny_mc
+```
+
+Ver `submit_nsight.sh` para ver cómo correrlo en los servidores de FAMAF (porque hay que cambiar la variable de entorno TMPDIR).
+Luego usar `ncu-ui` para ver el reporte en una interfaz gráfica (usar x2go para levantar ventanas gráficas en los servidores de FAMAF).
+También se puede hacer que el profiling mida eventos específicos en lugar de reportar toda la información. 
+
+**NOTA:** `ncu` y `ncu-ui` se suelen encontrar en `/opt/cuda/11.2.2/nsight-compute-2020.3.1/`. 
+
+Otras herramientas útiles son `nvprof` (para ver si están ejecutando los kernels), `cuobjdump` (nos muestra para que arquitectura se compiló) 
+y `cuda-memcheck` (ver problemas de memoria).
+`nvprof` en las versiones nuevas corre como parte de `nsight`.  

@@ -10,5 +10,5 @@
 TMPDIR=$HOME/tmp srun /opt/cuda/11.2.2/nsight-compute-2020.3.1/ncu -f -o tiny_kernel --set full ./tiny_mc
 
 # Run
-# sbatch submit_lab4_icc.sh
+# sbatch submit_nsight.sh
 

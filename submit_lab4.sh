@@ -11,5 +11,5 @@ NUM_ITER=1
 srun ./execute_cuda_n_times.sh -n $NUM_ITER
 
 # Run
-# sbatch submit_lab4_icc.sh
+# sbatch submit_lab4.sh
 
