@@ -1,0 +1,1180 @@
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+327680000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt1.txt 
+# 4.968403 seconds
+# 65952.777759 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+163840000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt2.txt 
+# 3.347241 seconds
+# 97895.551366 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+81920000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt4.txt 
+# 2.299624 seconds
+# 142492.873378 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+40960000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt8.txt 
+# 1.773691 seconds
+# 184744.714669 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+20480000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt16.txt 
+# 1.536263 seconds
+# 213296.871061 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+10240000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt32.txt 
+# 1.431613 seconds
+# 228888.628159 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+5120000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt64.txt 
+# 1.391134 seconds
+# 235548.875727 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+2560000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt128.txt 
+# 1.381787 seconds
+# 237142.174635 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+1280000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt256.txt 
+# 1.387234 seconds
+# 236211.007123 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+640000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt512.txt 
+# 1.401314 seconds
+# 233837.675368 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+320000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt1024.txt 
+# 1.449467 seconds
+# 226069.281420 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+160000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt2048.txt 
+# 1.485077 seconds
+# 220648.560257 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+80000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b32_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b32_ppt4096.txt 
+# 1.727314 seconds
+# 189704.904376 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+327680000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt1.txt 
+# 3.293607 seconds
+# 99489.703027 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+163840000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt2.txt 
+# 2.787409 seconds
+# 117557.193392 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+81920000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt4.txt 
+# 1.921254 seconds
+# 170555.313586 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+40960000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt8.txt 
+# 1.353721 seconds
+# 242058.706091 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+20480000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt16.txt 
+# 1.146747 seconds
+# 285747.496660 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+10240000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt32.txt 
+# 1.067565 seconds
+# 306941.549651 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+5120000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt64.txt 
+# 1.041058 seconds
+# 314756.760572 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+2560000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt128.txt 
+# 1.032507 seconds
+# 317363.553766 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+1280000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt256.txt 
+# 1.032229 seconds
+# 317449.012053 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+640000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt512.txt 
+# 1.042219 seconds
+# 314406.091083 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+320000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt1024.txt 
+# 1.050915 seconds
+# 311804.391122 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+160000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt2048.txt 
+# 1.150864 seconds
+# 284725.241961 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+80000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b64_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b64_ppt4096.txt 
+# 1.392111 seconds
+# 235383.514843 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+327680000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt1.txt 
+# 3.334814 seconds
+# 98260.346594 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+163840000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt2.txt 
+# 2.506025 seconds
+# 130756.881024 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+81920000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt4.txt 
+# 1.810467 seconds
+# 180991.959800 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+40960000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt8.txt 
+# 1.460846 seconds
+# 224308.369566 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+20480000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt16.txt 
+# 1.369364 seconds
+# 239293.631467 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+10240000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt32.txt 
+# 1.328058 seconds
+# 246736.192227 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+5120000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt64.txt 
+# 1.303702 seconds
+# 251345.801460 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+2560000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt128.txt 
+# 1.284859 seconds
+# 255031.849119 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+1280000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt256.txt 
+# 1.271311 seconds
+# 257749.595927 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+640000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt512.txt 
+# 1.275362 seconds
+# 256930.911942 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+320000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt1024.txt 
+# 1.246373 seconds
+# 262906.917877 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+160000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt2048.txt 
+# 1.317306 seconds
+# 248750.117918 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+80000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b128_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b128_ppt4096.txt 
+# 1.528016 seconds
+# 214448.017485 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+327680000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt1.txt 
+# 3.097611 seconds
+# 105784.737105 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+163840000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt2.txt 
+# 2.635637 seconds
+# 124326.682549 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+81920000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt4.txt 
+# 2.068229 seconds
+# 158435.104015 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+40960000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt8.txt 
+# 1.965487 seconds
+# 166716.935576 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+20480000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt16.txt 
+# 1.892137 seconds
+# 173179.885942 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+10240000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt32.txt 
+# 1.832619 seconds
+# 178804.224178 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+5120000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt64.txt 
+# 1.801153 seconds
+# 181927.901817 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+2560000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt128.txt 
+# 1.797208 seconds
+# 182327.253482 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+1280000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt256.txt 
+# 1.791075 seconds
+# 182951.609284 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+640000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt512.txt 
+# 1.761493 seconds
+# 186024.061986 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+320000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt1024.txt 
+# 1.644944 seconds
+# 199204.397828 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+160000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt2048.txt 
+# 1.614330 seconds
+# 202982.001565 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+80000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b256_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b256_ppt4096.txt 
+# 1.729304 seconds
+# 189486.588818 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+327680000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt1.txt 
+# 4.403383 seconds
+# 74415.506809 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+163840000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt2.txt 
+# 3.384809 seconds
+# 96809.019158 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+81920000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt4.txt 
+# 2.989664 seconds
+# 109604.296640 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+40960000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt8.txt 
+# 2.884927 seconds
+# 113583.463214 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+20480000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt16.txt 
+# 2.815321 seconds
+# 116391.709218 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+10240000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt32.txt 
+# 2.760578 seconds
+# 118699.784662 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+5120000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt64.txt 
+# 2.684065 seconds
+# 122083.495355 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+2560000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt128.txt 
+# 2.711998 seconds
+# 120826.045718 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+1280000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt256.txt 
+# 2.766843 seconds
+# 118431.005271 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+640000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt512.txt 
+# 2.601131 seconds
+# 125975.964671 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+320000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt1024.txt 
+# 2.351430 seconds
+# 139353.518305 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+160000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt2048.txt 
+# 1.999740 seconds
+# 163861.332777 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+80000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b512_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b512_ppt4096.txt 
+# 2.089844 seconds
+# 156796.356263 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+327680000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt1.txt 
+# 6.291479 seconds
+# 52083.146940 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+163840000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt2.txt 
+# 5.330440 seconds
+# 61473.344337 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+81920000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt4.txt 
+# 5.262664 seconds
+# 62265.047989 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+40960000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt8.txt 
+# 5.263747 seconds
+# 62252.237051 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+20480000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt16.txt 
+# 5.278375 seconds
+# 62079.717775 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+10240000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt32.txt 
+# 5.289989 seconds
+# 61943.415011 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+5120000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt64.txt 
+# 5.302307 seconds
+# 61799.519004 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+2560000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt128.txt 
+# 5.159126 seconds
+# 63514.634356 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+1280000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt256.txt 
+# 4.778437 seconds
+# 68574.731168 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+640000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt512.txt 
+# 3.993735 seconds
+# 82048.516301 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+320000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt1024.txt 
+# 3.306589 seconds
+# 99099.091170 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+160000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt2048.txt 
+# 2.717320 seconds
+# 120589.390398 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+wtime.h:5:15: warning: ‘double wtime()’ defined but not used [-Wunused-function]
+    5 | static double wtime(void)
+      |               ^~~~~
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+80000
+########################################################
+# Photons    = 327680000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/heat_b1024_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646/photons_b1024_ppt4096.txt 
+# 3.212230 seconds
+# 102010.115148 K photons per second
+########################################################
+              1             2     ...          2048          4096
+32    6.595278e+07  9.789555e+07  ...  2.206486e+08  1.897049e+08
+64    9.948970e+07  1.175572e+08  ...  2.847252e+08  2.353835e+08
+128   9.826035e+07  1.307569e+08  ...  2.487501e+08  2.144480e+08
+256   1.057847e+08  1.243267e+08  ...  2.029820e+08  1.894866e+08
+512   7.441551e+07  9.680902e+07  ...  1.638613e+08  1.567964e+08
+1024  5.208315e+07  6.147334e+07  ...  1.205894e+08  1.020101e+08
+
+[6 rows x 13 columns]
+Saved to /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210625_140646

@@ -1,0 +1,864 @@
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+CUDA error at tiny_mc.cu:187 code=2(out of memory) "cudaMallocManaged(&rng, num_threads * sizeof(pcg32_random_t))" 
+-1018167296
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+1638400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt2.txt 
+# 223.674172 seconds
+# 14649.880997 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+819200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt4.txt 
+# 113.626063 seconds
+# 28838.454206 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+409600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt8.txt 
+# 63.209754 seconds
+# 51840.100578 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+204800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt16.txt 
+# 51.699641 seconds
+# 63381.485062 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+102400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt32.txt 
+# 47.158664 seconds
+# 69484.580726 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+51200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt64.txt 
+# 44.858484 seconds
+# 73047.496937 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+25600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt128.txt 
+# 43.805387 seconds
+# 74803.585711 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+12800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt256.txt 
+# 43.377855 seconds
+# 75540.848311 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+6400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt512.txt 
+# 43.215953 seconds
+# 75823.851218 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+3200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt1024.txt 
+# 43.210484 seconds
+# 75833.447539 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+1600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt2048.txt 
+# 43.305262 seconds
+# 75667.479423 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b32_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b32_ppt4096.txt 
+# 43.387227 seconds
+# 75524.532440 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+CUDA error at tiny_mc.cu:187 code=2(out of memory) "cudaMallocManaged(&rng, num_threads * sizeof(pcg32_random_t))" 
+-1018167296
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+1638400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt2.txt 
+# 122.342250 seconds
+# 26783.878832 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+819200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt4.txt 
+# 62.781531 seconds
+# 52193.693508 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+409600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt8.txt 
+# 34.651055 seconds
+# 94565.664149 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+204800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt16.txt 
+# 26.629779 seconds
+# 123050.212451 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+102400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt32.txt 
+# 24.022596 seconds
+# 136404.909798 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+51200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt64.txt 
+# 22.735551 seconds
+# 144126.704100 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+25600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt128.txt 
+# 22.101426 seconds
+# 148261.928096 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+12800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt256.txt 
+# 21.857361 seconds
+# 149917.455763 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+6400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt512.txt 
+# 21.765723 seconds
+# 150548.642549 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+3200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt1024.txt 
+# 21.766883 seconds
+# 150540.618435 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+1600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt2048.txt 
+# 21.837480 seconds
+# 150053.940732 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b64_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b64_ppt4096.txt 
+# 21.974570 seconds
+# 149117.819070 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+CUDA error at tiny_mc.cu:187 code=2(out of memory) "cudaMallocManaged(&rng, num_threads * sizeof(pcg32_random_t))" 
+-1018167296
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+1638400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt2.txt 
+# 70.309625 seconds
+# 46605.283416 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+819200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt4.txt 
+# 34.436000 seconds
+# 95156.231850 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+409600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt8.txt 
+# 20.305965 seconds
+# 161371.302729 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+204800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt16.txt 
+# 15.323979 seconds
+# 213834.794132 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+102400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt32.txt 
+# 13.280295 seconds
+# 246741.508323 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+51200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt64.txt 
+# 12.532296 seconds
+# 261468.451316 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+25600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt128.txt 
+# 12.189371 seconds
+# 268824.369592 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+12800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt256.txt 
+# 12.053150 seconds
+# 271862.533346 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+6400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt512.txt 
+# 12.010221 seconds
+# 272834.286813 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+3200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt1024.txt 
+# 12.008624 seconds
+# 272870.563156 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+1600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt2048.txt 
+# 12.060845 seconds
+# 271689.095937 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b128_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b128_ppt4096.txt 
+# 12.170454 seconds
+# 269242.213368 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu(265): warning: integer conversion resulted in a change of sign
+
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+CUDA error at tiny_mc.cu:187 code=2(out of memory) "cudaMallocManaged(&rng, num_threads * sizeof(pcg32_random_t))" 
+-1018167296
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+1638400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt2.txt 
+# 44.047258 seconds
+# 74392.826313 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+819200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt4.txt 
+# 21.473473 seconds
+# 152597.581791 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+409600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt8.txt 
+# 12.877213 seconds
+# 254465.001692 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+204800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt16.txt 
+# 9.310676 seconds
+# 351940.082222 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+102400000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt32.txt 
+# 8.145137 seconds
+# 402301.387529 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+51200000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt64.txt 
+# 7.778240 seconds
+# 421277.808510 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+25600000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt128.txt 
+# 7.604459 seconds
+# 430905.079077 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+12800000
+########################################################
+# Photons    = -1018167296
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/heat_b256_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_122615/photons_b256_ppt256.txt 
+# 7.529626 seconds
+# 435187.618907 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+tiny_mc.cu: In function ‘int main(int, char**)’:
+tiny_mc.cu:271:8: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]
+  271 |     printf("# Photons    = %8d\n#\n", PHOTONS);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
+      |                                   |
+      |                                   long int
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd-jupiterace: error: *** STEP 54669.0 ON jupiterace CANCELLED AT 2021-06-26T12:56:42 DUE TO TIME LIMIT ***
+slurmstepd-jupiterace: error: *** JOB 54669 ON jupiterace CANCELLED AT 2021-06-26T12:56:42 DUE TO TIME LIMIT ***

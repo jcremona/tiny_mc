@@ -1,0 +1,946 @@
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+32768000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt1.txt 
+# 4.370901 seconds
+# 7496.852687 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+16384000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt2.txt 
+# 2.186500 seconds
+# 14986.506445 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+8192000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt4.txt 
+# 1.117169 seconds
+# 29331.287553 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+4096000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt8.txt 
+# 0.630021 seconds
+# 52010.929765 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+2048000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt16.txt 
+# 0.519130 seconds
+# 63121.034823 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+1024000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt32.txt 
+# 0.474298 seconds
+# 69087.348628 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+512000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt64.txt 
+# 0.454745 seconds
+# 72057.972162 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+256000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt128.txt 
+# 0.442880 seconds
+# 73988.443589 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+128000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt256.txt 
+# 0.444158 seconds
+# 73775.621051 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+64000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt512.txt 
+# 0.443616 seconds
+# 73865.620027 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+32000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt1024.txt 
+# 0.470936 seconds
+# 69580.588284 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+16000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt2048.txt 
+# 0.472935 seconds
+# 69286.446061 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=32 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+8000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b32_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b32_ppt4096.txt 
+# 0.476129 seconds
+# 68821.654319 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+32768000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt1.txt 
+# 2.380693 seconds
+# 13764.057379 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+16384000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt2.txt 
+# 1.171818 seconds
+# 27963.392795 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+8192000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt4.txt 
+# 0.608064 seconds
+# 53889.067425 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+4096000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt8.txt 
+# 0.346330 seconds
+# 94614.866230 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+2048000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt16.txt 
+# 0.268515 seconds
+# 122034.019309 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+1024000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt32.txt 
+# 0.244281 seconds
+# 134140.781494 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+512000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt64.txt 
+# 0.231923 seconds
+# 141287.972410 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+256000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt128.txt 
+# 0.228883 seconds
+# 143164.603014 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+128000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt256.txt 
+# 0.225740 seconds
+# 145158.309810 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+64000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt512.txt 
+# 0.238721 seconds
+# 137264.572559 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+32000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt1024.txt 
+# 0.238257 seconds
+# 137532.422707 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+16000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt2048.txt 
+# 0.241863 seconds
+# 135481.439595 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=64 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+8000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b64_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b64_ppt4096.txt 
+# 0.243035 seconds
+# 134828.331808 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+32768000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt1.txt 
+# 1.319966 seconds
+# 24824.878345 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+16384000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt2.txt 
+# 0.654679 seconds
+# 50052.004324 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+8192000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt4.txt 
+# 0.331075 seconds
+# 98974.512452 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+4096000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt8.txt 
+# 0.204032 seconds
+# 160602.560567 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+2048000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt16.txt 
+# 0.155925 seconds
+# 210152.189313 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+1024000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt32.txt 
+# 0.138726 seconds
+# 236207.146280 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+512000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt64.txt 
+# 0.131839 seconds
+# 248544.703029 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+256000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt128.txt 
+# 0.129563 seconds
+# 252912.448640 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+128000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt256.txt 
+# 0.131917 seconds
+# 248398.341670 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+64000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt512.txt 
+# 0.134356 seconds
+# 243890.055911 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+32000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt1024.txt 
+# 0.134785 seconds
+# 243113.292110 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+16000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt2048.txt 
+# 0.137736 seconds
+# 237903.566509 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=128 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+8000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b128_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b128_ppt4096.txt 
+# 0.244455 seconds
+# 134045.011003 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+32768000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt1.txt 
+# 0.769093 seconds
+# 42606.046672 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+16384000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt2.txt 
+# 0.387710 seconds
+# 84516.693384 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+8192000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt4.txt 
+# 0.201539 seconds
+# 162588.877398 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+4096000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt8.txt 
+# 0.127873 seconds
+# 256254.464112 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+2048000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt16.txt 
+# 0.095979 seconds
+# 341407.541086 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+1024000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt32.txt 
+# 0.085589 seconds
+# 382855.134804 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+512000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt64.txt 
+# 0.082899 seconds
+# 395275.514746 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+256000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt128.txt 
+# 0.082225 seconds
+# 398517.715848 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+128000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt256.txt 
+# 0.086094 seconds
+# 380607.606432 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+64000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt512.txt 
+# 0.087032 seconds
+# 376505.731609 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+32000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt1024.txt 
+# 0.089948 seconds
+# 364298.855584 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+16000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt2048.txt 
+# 0.139767 seconds
+# 234446.616399 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=256 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+8000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b256_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b256_ppt4096.txt 
+# 0.275444 seconds
+# 118964.211193 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+32768000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt1.txt 
+# 0.437771 seconds
+# 74851.868784 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+16384000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt2.txt 
+# 0.265603 seconds
+# 123372.328746 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+8192000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt4.txt 
+# 0.147932 seconds
+# 221507.420065 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+4096000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt8.txt 
+# 0.093976 seconds
+# 348685.259513 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+2048000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt16.txt 
+# 0.071230 seconds
+# 460031.406192 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+1024000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt32.txt 
+# 0.066780 seconds
+# 490683.264340 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+512000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt64.txt 
+# 0.066068 seconds
+# 495971.433676 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+256000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt128.txt 
+# 0.069143 seconds
+# 473917.176081 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+128000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt256.txt 
+# 0.070128 seconds
+# 467261.149513 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+64000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt512.txt 
+# 0.074201 seconds
+# 441612.864306 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+32000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt1024.txt 
+# 0.088032 seconds
+# 372228.419471 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+16000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt2048.txt 
+# 0.173435 seconds
+# 188935.288797 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=512 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+8000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b512_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b512_ppt4096.txt 
+# 0.339951 seconds
+# 96390.365325 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1 -o tiny_mc tiny_mc.o 
+32768000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt1_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt1.txt 
+# 0.330217 seconds
+# 99231.723341 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2 -o tiny_mc tiny_mc.o 
+16384000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt2_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt2.txt 
+# 0.196503 seconds
+# 166755.796448 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4 -o tiny_mc tiny_mc.o 
+8192000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt4_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt4.txt 
+# 0.124564 seconds
+# 263061.214045 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=8 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=8 -o tiny_mc tiny_mc.o 
+4096000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt8_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt8.txt 
+# 0.082381 seconds
+# 397762.114588 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=16 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=16 -o tiny_mc tiny_mc.o 
+2048000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt16_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt16.txt 
+# 0.074009 seconds
+# 442755.850504 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=32 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=32 -o tiny_mc tiny_mc.o 
+1024000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt32_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt32.txt 
+# 0.070369 seconds
+# 465661.995989 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=64 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=64 -o tiny_mc tiny_mc.o 
+512000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt64_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt64.txt 
+# 0.071252 seconds
+# 459887.178055 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=128 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=128 -o tiny_mc tiny_mc.o 
+256000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt128_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt128.txt 
+# 0.069762 seconds
+# 469713.557414 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=256 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=256 -o tiny_mc tiny_mc.o 
+128000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt256_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt256.txt 
+# 0.070557 seconds
+# 464419.295855 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=512 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=512 -o tiny_mc tiny_mc.o 
+64000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt512_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt512.txt 
+# 0.070435 seconds
+# 465221.911025 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1024 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=1024 -o tiny_mc tiny_mc.o 
+32000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt1024_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt1024.txt 
+# 0.138377 seconds
+# 236802.987346 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2048 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=2048 -o tiny_mc tiny_mc.o 
+16000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt2048_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt2048.txt 
+# 0.274166 seconds
+# 119518.718416 K photons per second
+########################################################
+rm -f *.o tiny_mc
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4096 -o tiny_mc.o -c tiny_mc.cu
+nvcc -O2 -arch=sm_75 -Xcompiler=-Wall -DBLOCK_SIZE=1024 -DPHOTONS_PER_THREAD=4096 -o tiny_mc tiny_mc.o 
+8000
+########################################################
+# Photons    = 32768000
+#
+# Heat filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/heat_b1024_ppt4096_0.txt 
+# Photons filepath: /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518/photons_b1024_ppt4096.txt 
+# 0.537267 seconds
+# 60990.142328 K photons per second
+########################################################
+              1             2     ...          2048          4096
+32    7.496853e+06  1.498651e+07  ...  6.928645e+07  6.882165e+07
+64    1.376406e+07  2.796339e+07  ...  1.354814e+08  1.348283e+08
+128   2.482488e+07  5.005200e+07  ...  2.379036e+08  1.340450e+08
+256   4.260605e+07  8.451669e+07  ...  2.344466e+08  1.189642e+08
+512   7.485187e+07  1.233723e+08  ...  1.889353e+08  9.639037e+07
+1024  9.923172e+07  1.667558e+08  ...  1.195187e+08  6.099014e+07
+
+[6 rows x 13 columns]
+Saved to /home/cp2021cp202143/tiny_mc/outputs/execute_n_20210626_120518
